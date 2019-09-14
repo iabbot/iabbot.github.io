@@ -12,158 +12,148 @@
 <div class="commandCard">
     <h1 class="iabCommand">iab!role</h1>
     <p>This command manages roles, self-assignments, and more.</p>
-    <h2> Subcommands </h2>
-    
+    <br/>
+    <h1> Subcommands </h1>
     
     
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Assign</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role assign % $</p>
             <p>% refers to the user<br/>
             $ refers to the role to assign.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role assign うん#6878 Ultimate</span> <br/>
-        This command would assign the role <em>Ultimate</em> to the user <em>うん#6878</em>.
+        This command would assign the role <em>Ultimate</em> to the user <em>うん#6878</em>.-->
     </div>
-    <br/>
 
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Assignall</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role assignall $</p>
             <p>$ refers to the role to assign.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role assignall Member</span> <br/>
         This command would assign the role <em>Member</em> to every user. Keep in mind this 
-        command will only assign one member a role each second.</p>
+        command will only assign one member a role each second.</p>-->
     </div>
-    <br/>
     
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Unassign</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role unassign % $</p>
             <p>% refers to the user<br/>
             $ refers to the role to unassign.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role unassign うん#6878 Ultimate</span> <br/>
-        This command would unassign the role <em>Ultimate</em> from the user <em>うん#6878</em>.
+        This command would unassign the role <em>Ultimate</em> from the user <em>うん#6878</em>.-->
     </div>
-    <br/>
 
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Unassignall</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role unassignall $</p>
             <p>$ refers to the role to unassign.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role unassignall Ultimate</span> <br/>
         <p> This command would unassign Ultimate from every user. Internally, it deletes the role 
-        and recreates it in-place to be fast.</p>
+        and recreates it in-place to be fast.</p>-->
     </div>
-    <br/>
 
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Create</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role create Optional# "</p>
             <p>Optional# refers to the color of the role (currently only decimal. use iab!todec
             on a hex-string to get the decimal value)<br/>
             " refers to the name of the role.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role create 16777215 Color_White <br/></span>
-        This command would create a role named Color_White, with a white color (hex FFFFFF).</p>
+        This command would create a role named Color_White, with a white color (hex FFFFFF).</p>-->
     </div>
-    <br/>
     
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Delete</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role delete $</p>
             <p>$ refers to the role to delete.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role delete Members</span><br/>
-        This command would delete the role named Members.</p>
+        This command would delete the role named Members.</p>-->
     </div>
-    <br/>
     
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Empty</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role empty</p>
         </div>
         This command enumerates how many users are in each role. If it's empty, it sends the role's name.
     </div>
-    <br/>
     
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Selfassignadd</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role selfassignadd $</p>
             <p>$ refers to the role to add to the self-assign pool.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role selfassignadd Color_Blue</span> <br/>
-        This command would allow users to iab!role selfassign Color_Blue.
+        This command would allow users to iab!role selfassign Color_Blue.-->
     </div>
-    <br/>
     
     <div class="subCommandCard">
         <h1 class="iabAdminCommand">Selfassignremove</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role selfassignremove $</p>
             <p>$ refers to the role to remove from the self-assign pool.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role selfassignremove Color_Blue</span> <br/>
-        This command would no longer allow users to iab!role selfassign Color_Blue.
+        This command would no longer allow users to iab!role selfassign Color_Blue.-->
     </div>
-    <br/>
     
     <div class="subCommandCard">
         <h1 class="iabCommand">Selfassign</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role selfassign $</p>
             <p>$ refers to the role to assign.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role selfassign Color_Blue</span> <br/>
         This command would assign the role <em>Color_Blue</em> to the user <em>うん#6878</em>.<br/>
-        This command does not require administrator privileges.
+        This command does not require administrator privileges.-->
     </div>
-    <br/>
     
     <div class="subCommandCard">
         <h1 class="iabCommand">Whohas</h1>
         <div class="parameters">
-            <h2>Syntax</h2>
+            <!--<h2>Syntax</h2>-->
             <p class="iabCommandSyntax">iab!role whohas $</p>
             <p>$ refers to the role to query.</p>
         </div>
-        <h2>Example</h2>
+        <!--<h2>Example</h2>
         <p> <span class="iabCommandSyntax">iab!role whohas Administrator</span> <br/>
-        This command would return a list of users that have the Administrator role. You cannot target the @everyone role.
+        This command would return a list of users that have the Administrator role. You cannot target the @everyone role.-->
     </div>
     <br/>
 </div>
-
+<br/>
 
 </body>
 </html>

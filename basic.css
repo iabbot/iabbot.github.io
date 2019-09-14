@@ -20,6 +20,7 @@ h2{
     margin-top: 8px;
     margin-bottom: 8px;
 }
+/*
 h3{
     margin-top: 8px;
     margin-bottom: 8px;
@@ -27,32 +28,37 @@ h3{
 h4{
     margin-top: 8px;
     margin-bottom: 8px;
-}
+}*/
 .mainbody {
     background-color: #93A5FF;
 }
 .iabCommand {
-    font-size:54px;
-    line-height:100%;
+    font-size:32px;
+    margin-top:1em;
+    margin-bottom: 0;
+    line-height:120%;
 }
 .iabAdminCommand {
-    font-size:54px;
-    line-height:100%;
-    color:red;
+    line-height:120%;
+    font-size:32px;
+    margin-top:1em;
+    margin-bottom: 0;
+    color:#C8554c;
 }
 .indexLink {
     line-height:200%;  
-    font-size: 64px;
+    font-size: 32px;
 }
 .iabCommandUsage {
     font-weight:bolder;
 }
 .parameters {
-    background-color: #A3B5FF;
+   // background-color: #A3B5FF;
 }
 .iabCommandExample {
 }
 .iabCommandSyntax {
+    margin-top:1em;
     font-family: 'Courier New';
 }
 .iabCommandUsageBody {
