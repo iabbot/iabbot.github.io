@@ -43,7 +43,7 @@ h4{
     font-size:32px;
     margin-top:1em;
     margin-bottom: 0;
-    color:#C8554c;
+    color:#BB0077;
 }
 .indexLink {
     line-height:200%;  
@@ -58,7 +58,8 @@ h4{
 .iabCommandExample {
 }
 .iabCommandSyntax {
-    margin-top:1em;
+    margin-top:0.5em;
+    font-weight:bold;
     font-family: 'Courier New';
 }
 .iabCommandUsageBody {

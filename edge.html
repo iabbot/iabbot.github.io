@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>  
+<head>
+<title>iab Command Reference - die,mur,sui</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="basic.css" rel="stylesheet">
+</head>
+
+<body class="mainbody">
+<a href="index.html" class="indexLink">Return to index</a>
+
+<div class="commandCard">
+    <h1 class="iabCommand">iab!edge</h1>
+    <p>This command edgemaps an image.</p>
+    <h1 class="iabCommand">Unordered Parameters</h1>
+    
+    <div style="background-color:#F3A5FF">
+        <p style="color:#B385BF">REQUIRED PARAMETER</p>
+        <p>Image</p>
+        <p> Can either be attached or linked. This is the image to be edgemapped.</p>
+    </div>
+        <br/>
+    
+        <p>-color #</p>
+            <p>Defines the color of the edgemap. Valid values are six-digit hexadecimal numbers.</p>
+    <br/>
+        <p>-radius #</p>
+            <p>Defines the radius of pixels to consider when looking for edges.</p>
+    <br/>
+        <p>-alphamode #</p>
+            <p>Sets the mode of alpha calculation. Valid values:</p>
+            <ol start="0">
+            <li>If the pixel is an edge, it will have an alpha of 255. Otherwise, its alpha will be 0.</li>
+            <li>If the pixel is an edge, it will use the source pixel's alpha. Otherwise, its alpha will be 0.</li>
+            <li>If the pixel is an edge, its alpha value will be the contrast between it and other pixels, otherwise 0.</li>
+            </ol>
+    <br/>
+        <p>-tolerance #</p>
+            <p>Defines the amount that one channel must differ for a pixel to be considered an edge. </p>
+    <br/>
+        <p>-bias #</p>
+            <p>The amount of alpha to add or remove from the edgemap.</p>
+    <br/>
+    
+<img src="chung.png"width=100%></img>
+<p>I don't know why the output was rotated, but it's probably because my camera is shit</p>
+<img src="chungus.png"width=100%></img>
+<p>This was the output, by the way.</p>
+</div>
+<br/>
+
+
+</body>
+</html>
