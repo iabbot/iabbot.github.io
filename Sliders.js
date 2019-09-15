@@ -128,7 +128,7 @@ function OrderedParametersSlider() {
     var a = $("<a>"), img = $("<img>");
     a.attr("href", "index.html");
     img.attr("src", "indexWarp.png");
-    img.attr("style", "height:2em;margin-bottom: 0px");
+    img.attr("style", "height:3em;margin-bottom: 0px");
     a.append(img);
     $("body").append(a);
     br();
