@@ -1,114 +1,33 @@
 <!DOCTYPE html>
 <html>  
 <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Sliders.js"></script>
 <title>iab Command Reference - Role</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="basic.css" rel="stylesheet">
 </head>
 
 <body class="mainbody">
-<a href="index.html" class="indexLink">Return to index</a>
-
-<div class="commandCard">
-    <h1 class="iabCommand">iab!role</h1>
+    <script>
+        indexWarpSlider();
+        commandNameSlider("iab!role");
+    </script>
     <p>This command manages roles, self-assignments, and more.</p>
-    <br/>
-    <h1> Subcommands </h1>
-    
-    
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Assign</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role assign % $</p>
-            <p>% refers to the user<br/>
-            $ refers to the role to assign.</p>
-        </div>
-    </div>
-
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Assignall</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role assignall $</p>
-            <p>$ refers to the role to assign.</p>
-        </div>
-    </div>
-    
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Unassign</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role unassign % $</p>
-            <p>% refers to the user<br/>
-            $ refers to the role to unassign.</p>
-        </div>
-    </div>
-
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Unassignall</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role unassignall $</p>
-            <p>$ refers to the role to unassign.</p>
-        </div>
-    </div>
-
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Create</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role create [Decimal#] "</p>
-            <p>OPTIONAL: Decimal# refers to the color of the role (currently only decimal. use iab!todec
-            on a hex-string to get the decimal value)<br/>
-            " refers to the name of the role.</p>
-        </div>
-    </div>
-    
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Delete</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role delete $</p>
-            <p>$ refers to the role to delete.</p>
-        </div>
-    </div>
-    
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Empty</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role empty</p>
-        </div>
-        This command enumerates how many users are in each role. If it's empty, it sends the role's name.
-    </div>
-    
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Selfassignadd</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role selfassignadd $</p>
-            <p>$ refers to the role to add to the self-assign pool.</p>
-        </div>
-    </div>
-    
-    <div class="subCommandCard">
-        <h1 class="iabAdminCommand">Selfassignremove</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role selfassignremove $</p>
-            <p>$ refers to the role to remove from the self-assign pool.</p>
-        </div>
-    </div>
-    
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Selfassign</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role selfassign $</p>
-            <p>$ refers to the role to assign.</p>
-        </div>
-    </div>
-    
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Whohas</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!role whohas $</p>
-            <p>$ refers to the role to query.</p>
-        </div>
-    </div>
-    <br/>
-</div>
+<script>
+    SubcommandsSlider();
+    adminsubcommandCard("Assign", "iab!role assign % $", "% refers to the user to assign a role to <br/> $ refers to the role to assign.");
+    adminsubcommandCard("Assignall", "iab!role assignall $", "Assigns the role $ to all members. Keep in mind it assigns to one user per second.");
+    adminsubcommandCard("Unassign", "iab!role unassign % $", "% refers to the user to unassign a role from.<br\>$ refers to the role to unassign.");
+    adminsubcommandCard("Unassignall", "iab!role unassignall $", "Unassigns the $ role from all members. Internally, it deletes the role and recreates it in-place.");
+    adminsubcommandCard("Create", "iab!role create [Decimal#], \"", "OPTIONAL: Decimal# refers to the color of the role. Use iab!todec to get a decimal number from a hex-string.<br/>\" Refers to the name of the role.");
+    adminsubcommandCard("Delete", "iab!role delete $", "$ refers to the role to delete.");
+    adminsubcommandCard("Empty", "iab!role empty", "Will return a list of roles with no members, along with some percentages.");
+    adminsubcommandCard("Selfassignadd", "iab!role selfassignadd $", "$ refers to the role to add to the self-assign pool.");
+    adminsubcommandCard("Selfassignremove", "iab!role selfassignremove $", "$ refers to the role to remove from the self-assign pool. ");
+    subcommandCard("Selfassign", "iab!role selfassign $", "Assigns the $ role to yourself. It must have already been added to the self-assign pool.");
+    subcommandCard("Whohas", "iab!role whohas $", "Will return a list of everyone with the $ role. You cannot target @everyone.");
+    </script>    
 <br/>
 
 </body>

@@ -1,63 +1,31 @@
 <!DOCTYPE html>
-<html>  
-<head>
-<title>iab Command Reference - die,mur,sui</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<link href="basic.css" rel="stylesheet">
-</head>
-
-<body class="mainbody">
-<a href="index.html" class="indexLink">Return to index</a>
-
-<div class="commandCard">
-    <h1 class="iabCommand">iab!die</h1>
-    <div class="iabCommandUsageBody"> 
-        <div class="parameters">
-            <h2 class="iabCommandUsage">Usage</h2>
-                <p>
-                <span class="iabCommandSyntax">iab!die #</span> <br/>
-                    # refers to the number of messages to go through, deleting each of iab's messages.
-                </p>
-        </div>
-    </div>
-    <h2>Example</h2>
-    <code>iab!die 100</code>
-    <p>Out of the last 100 messages, it deletes iab's.</p>
-</div>
-<br>
-
-<div class="commandCard">
-    <h1 class="iabCommand">iab!sui</h1>
-    <div class="parameters">
-        <h2>Syntax</h2>
+<html>
+    <head>
+        <title>iab Command Reference - die,mur,sui</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Sliders.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="basic.css" rel="stylesheet">
+    </head>
+    <body class="mainbody">
+        <script>
+            indexWarpSlider();
+            commandNameSlider("iab!die");
+        </script>
+        <p> <span class="iabCommandSyntax">iab!die #</span> <br/> # refers to the number of messages to go through, deleting each of iab's messages. </p>
+        <br/>
+        <script>
+            commandNameSlider("iab!sui");
+        </script>
         <p class="iabCommandSyntax">iab!sui #</p>
-        <p>
-            # refers to the number of messages to go through, deleting each of your messages.
-        </p>
-    </div>
-    <h2>Example</h2>
-    <p>
-    <span class="iabCommandSyntax">iab!sui 100</span> <br/>
-    Out of the last 100 messages, it deletes yours. <br/>
-    It's literally the exact same thing as iab!die internally, but it uses your id instead of iab's id.</p>
-</div>
-
-<br>
-<div class="commandCard">
-    <h1 class="iabAdminCommand">iab!mur</h1>
-    <div class="parameters">
-        <h2>Usage</h2>
+        <p> # refers to the number of messages to go through, deleting each of your messages. </p>
+        <br/>
+        <script>
+            commandNameSlider("iab!mur");
+        </script>
         <p class="iabCommandSyntax">iab!mur % #</p>
         <p> % refers to the user whose messages to delete. Check the selector reference for targeting information.<br/>
-        # refers to the number of messages to go through.</p>
-    </div>
-
-    <h2>Example</h2>
-    <code>iab!mur iabd 100</code>
-    <p>Out of the last 100 messages, it deletes the targeted user's.</p>
-    <p>It's literally the exact same thing as iab!die internally, but it uses the target's id instead of iab's id.</p>
-</div>
-
-
-</body>
+            # refers to the number of messages to go through.
+        </p>
+    </body>
 </html>

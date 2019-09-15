@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>  
 <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Sliders.js"></script>
 <title>iab Command Reference - Selector *</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="basic.css" rel="stylesheet">
@@ -8,11 +10,12 @@
 
 <body class="mainbody">
 
-<a href="index.html" class="indexLink"><- Index</a>
-
-<div class="commandCard">
-<br>
-<h1 class="iabCommand">iab! Selector Reference: *</h1>
+    <script>
+    indexWarpSlider();
+        commandNameSlider("Guild (*)");
+        
+    </script>
+    
 <p> * refers to a guild to be targeted. A target can either be the exact name of the role, its position (with @everyone being 0 (although most commands do not allow @everyone to be selected)), its mention, or its id.
 <p> As an example, let's take a role named Members, with the position of 1 (second lowest role) and an id of 1291.</p>
 <p> Valid ways to target this role are as follows </p>
@@ -26,9 +29,6 @@
 <ul>
 <li>members (the name must match exactly.) </li>
 </ul>
-</div>
-
-
 
 </body>
 </html>

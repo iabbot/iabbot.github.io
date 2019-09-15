@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>  
 <head>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Sliders.js"></script>
 <title>iab Command Reference - Rex</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="basic.css" rel="stylesheet">
 </head>
 
 <body class="mainbody">
-<a href="index.html" class="indexLink"><img src="indexWarp.png" style="width:25%;height:3%;padding-top:0.5em;" ></img></a>
-<br/>
-<img src="commandSlider.png", style="width:25%; height:4em;">
-<h1 class="iabCommand" style="position:relative;bottom:2.5em;right:-1em;font-size:30pt">iab!rex</h1>
-</img>
-<div class="commandCard">
+    <script>
+    indexWarpSlider();
+        commandNameSlider("iab!rex");
+    </script>
     <p>This command manages runtime extensions.</p>
+    <script>
+
+    SubcommandsSlider();
+    </script>
     <br/>
     <div class="reasoning">
         <h3>A quick primer about runtime extensions (rEx)</h3>
@@ -29,38 +34,13 @@
         <p>Runtime extensions can be run with the prefix <span class="iabCommandSyntax"> rex! </span>(<span class="iabCommandSyntax">rexd</span> if using iabd)</p>
         <p>Also I'm disclaiming responsibility for runtime extensions. If someone does something mean with it, it's not my fault.</p>
     </div>
-    <h1> Subcommands </h1>
     
-    
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Create</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!rex create "trigger "response</p>
-            <p>"trigger represents the string that must be written after rex! to trigger the command. It cannot contain spaces.</p>
-            <p>"response is the response that iab should reply with.</p>
-        </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Delete</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!rex delete "trigger<p>
-            <p>"trigger represents the trigger of the command to delete..</p>
-        </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Deleteall</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!rex deleteall</p>
-            <p>Deletes all of your runtime extensions.</p>
-        </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">List</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!info list [all]</p>
-            <p>Lists all of your runtime extensions, or all runtime extensions (in your guild) if 'all' is written.</p>
-        </div>
-    </div>
+    <script>
+    subcommandCard("Create", "iab!rex create \"trigger \"response", "\"Trigger represents the string that must be written after rex! to trigger the command. It cannot contain spaces <br/>\"response is the response that iab should reply with.");
+    subcommandCard("Delete", "iab!rex delete \"trigger ", "\"Trigger represents the command to be deleted.");
+    subcommandCard("Deleteall", "iab!rex deleteall", "Deletus.");
+    subcommandCard("List", "iab!rex list [all] ", "Lists all of your runtime extensions, or the runtime extensions of everyone in your guild if 'all' is specified.");
+    </script>
 
     <br/>
 </div>

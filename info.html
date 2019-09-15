@@ -2,58 +2,51 @@
 <html>  
 <head>
 <title>iab Command Reference - Info</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Sliders.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="basic.css" rel="stylesheet">
 </head>
 
 <body class="mainbody">
-<a href="index.html" class="indexLink">Return to index</a>
 
-<div class="commandCard">
-    <h1 class="iabCommand">iab!info</h1>
+    <script>
+        indexWarpSlider();
+        commandNameSlider("iab!info");
+    </script>
     <p>This sends information about various things.</p>
-    <br/>
-    <h1> Subcommands </h1>
     
-    
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Emote</h1>
-        <div class="parameters">
+    <script>
+        SubcommandsSlider();
+        subcommandCard("Emote");
+    </script>
             <p class="iabCommandSyntax">iab!info emote [-ec]</p>
             <p>OPTIONAL: -ec will condense the output to be on one line and not include emote names</p>
-        </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Invite</h1>
-        <div class="parameters">
+<script>
+    subcommandCard("Invites");
+    </script>
             <p class="iabCommandSyntax">iab!info invite [-ic]<p>
             <p>OPTIONAL: -ic will use more concise messages for each invite, lowering the total output's size.</p>
-        </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Guild</h1>
-        <div class="parameters">
+
+<script>
+    subcommandCard("Guild");
+    </script>
             <p class="iabCommandSyntax">iab!info Guild</p>
             <p>Sends some info about the server</p>
-        </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">General</h1>
-        <div class="parameters">
+    
+<script>
+    subcommandCard("General");
+    </script>
             <p class="iabCommandSyntax">iab!info general [-ec] [-ic]</p>
             <p>Equivalent to iab!info guild + iab!info emote (-ec if specified) + iab!info invite (-ic if specified)</p>
-        </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">User</h1>
-        <div class="parameters">
+    
+<script>
+    subcommandCard("User");
+    </script>
             <p class="iabCommandSyntax">iab!info user %</p>
             <p>Shows some info about the targeted user.</p>
-        </div>
-    </div>
 
     <br/>
-</div>
 <br/>
 
 </body>
