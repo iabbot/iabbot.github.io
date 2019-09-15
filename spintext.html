@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>  
+<head>
+<title>iab Command Reference - Spintext</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="basic.css" rel="stylesheet">
+</head>
+
+<body class="mainbody">
+<a href="index.html" class="indexLink">Return to index</a>
+
+<div class="commandCard">
+    <h1 class="iabCommand">iab!spintext</h1>
+    <p>This command manages spinning text generation.</p>
+    <p>Renders are exclusive, and two cannot be done at once.</p>
+    <br/>
+    <h1> Subcommands </h1>
+    
+    
+    <div class="subCommandCard">
+        <h1 class="iabCommand">Create</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!spintext create [#zoom] "text</p>
+            <p>OPTIONAL: #zoom represents the zoom for the camera. Smaller values = closer. Default 0.66</p>
+            <p>"text is the text to render. It can contain new lines.</p>
+        </div>
+    </div>
+    <div class="subCommandCard">
+        <h1 class="iabCommand">Delete</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!spintext delete #id<p>
+            <p>#id is the id of the spintext to delete, as returned by the create subcommand.</p>
+        </div>
+    </div>
+    <div class="subCommandCard">
+        <h1 class="iabCommand">Deleteall</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!spintext deleteall</p>
+            <p>Deletus.</p>
+        </div>
+    </div>
+    <div class="subCommandCard">
+        <h1 class="iabCommand">Busy</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!spintext busy</p>
+            <p>Will tell you if Blender is busy rendering.</p>
+        </div>
+    </div>
+    <div class="subCommandCard">
+        <h1 class="iabCommand">List</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!spintext List</p>
+            <p>Will generate a mosaic of your spintexts.</p>
+        </div>
+    </div>
+
+    <br/>
+</div>
+<br/>
+
+</body>
+</html>
