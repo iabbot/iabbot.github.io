@@ -20,6 +20,9 @@ h2{
     margin-top: 8px;
     margin-bottom: 8px;
 }
+.afterSlider {
+    margin-top:-5em;
+}
 .mainbody {
     background-color: #93A5FF;
 }
