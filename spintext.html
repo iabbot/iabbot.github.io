@@ -1,62 +1,76 @@
 <!DOCTYPE html>
-<html>  
-<head>
-<title>iab Command Reference - Spintext</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<link href="basic.css" rel="stylesheet">
-</head>
-
-<body class="mainbody">
-<a href="index.html" class="indexLink">Return to index</a>
-
-<div class="commandCard">
-    <h1 class="iabCommand">iab!spintext</h1>
-    <p>This command manages spinning text generation.</p>
-    <p>Renders are exclusive, and two cannot be done at once.</p>
-    <br/>
-    <h1> Subcommands </h1>
-    
-    
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Create</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!spintext create [#zoom] "text</p>
-            <p>OPTIONAL: #zoom represents the zoom for the camera. Smaller values = closer. Default 0.66</p>
-            <p>"text is the text to render. It can contain new lines.</p>
+<html>
+    <head>
+        <title>iab Command Reference - Spintext</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="basic.css" rel="stylesheet">
+    </head>
+    <body class="mainbody">
+        <a href="index.html" class="indexLink"><img src="indexWarp.png" style="width:25%;height:3%;padding-top:0.5em;" ></img></a>
+        <br/>
+        <img src="commandSlider.png", style="width:25%; height:4em;">
+            <h1 class="iabCommand" style="position:relative;bottom:2.5em;right:-1em;font-size:30pt">iab!spintext</h1>
+        </img>
+        <p class="afterSlider">This command manages spinning text generation.</p>
+        <p>Renders are exclusive, and two cannot be done at once.</p>
+        <br/>
+        <img src="subcommandSlider.png", style="width:27.5%; height:4em; margin-bottom: 0px">
+        <h1 class="iabCommand" style="position:relative;bottom:2.25em;right:-1.25em;font-size:30pt">Subcommands</h1>
+        </img>
+            <img src="subcommandNameSlider.png", style="width:30%; height:3em;margin-top:-5em">
+            <h1 class="iabCommand" style="position:relative;bottom:2.25em;right:-2em;font-size:30pt">Create</h1>
+        </img>
+        <div class="afterSlider" style="margin-left:75px">
+            <p> <span class="iabCommandSyntax">iab!spintext create [#zoom] "text</span> <br/>
+                OPTIONAL: #zoom represents the zoom for the camera. Smaller values = closer. Default 0.66 <br/>
+                "text is the text to render. It can contain new lines.
+            </p>
+            <br/>
         </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Delete</h1>
-        <div class="parameters">
-            <p class="iabCommandSyntax">iab!spintext delete #id<p>
-            <p>#id is the id of the spintext to delete, as returned by the create subcommand.</p>
+        <img src="subcommandNameSlider.png", style="width:30%; height:3em;">
+            <h1 class="iabCommand" style="position:relative;bottom:2.25em;right:-2em;font-size:30pt">Delete</h1>
+        </img>
+        <div class="afterSlider" style="margin-left:75px">
+            <p> <span class="iabCommandSyntax">iab!spintext delete #id</span> <br/>
+                #id is the id of the spintext to delete, as returned by the create subcommand.
+            </p>
+            <br/>
         </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Deleteall</h1>
-        <div class="parameters">
+        <img src="subcommandNameSlider.png", style="width:30%; height:3em;">
+            <h1 class="iabCommand" style="position:relative;bottom:2.25em;right:-2em;font-size:30pt">Deleteall</h1>
+        </img>
+        <div class="afterSlider" style="margin-left:75px">
             <p class="iabCommandSyntax">iab!spintext deleteall</p>
             <p>Deletus.</p>
+            <br/>
         </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">Busy</h1>
-        <div class="parameters">
+        <img src="subcommandNameSlider.png", style="width:30%; height:3em;">
+            <h1 class="iabCommand" style="position:relative;bottom:2.25em;right:-2em;font-size:30pt">Busy</h1>
+        </img>
+        <div class="afterSlider" style="margin-left:75px">
             <p class="iabCommandSyntax">iab!spintext busy</p>
             <p>Will tell you if Blender is busy rendering.</p>
+            <br/>
         </div>
-    </div>
-    <div class="subCommandCard">
-        <h1 class="iabCommand">List</h1>
-        <div class="parameters">
+        <img src="subcommandNameSlider.png", style="width:30%; height:3em;">
+            <h1 class="iabCommand" style="position:relative;bottom:2.25em;right:-2em;font-size:30pt">List</h1>
+        </img>
+        <div class="afterSlider" style="margin-left:75px">
             <p class="iabCommandSyntax">iab!spintext List</p>
             <p>Will generate a mosaic of your spintexts.</p>
         </div>
-    </div>
-
-    <br/>
-</div>
+    <script>
+        var container = $("<div>");
+        var h = $("<h1>");
+        h1.text("e");
+        container.append(h);
+        $("body").append(container);</script>
+<noscript><p>what the fuck</p></noscript>
+<br/><br/>
+<br/>
+<br/>
+<br/>
 <br/>
 
-</body>
+    </body>
 </html>
