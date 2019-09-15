@@ -27,21 +27,21 @@ h2{
     background-color: #93A5FF;
 }
 .iabCommand {
-    font-size:32px;
+    font-size:260%;
     margin-top:1em;
     margin-bottom: 0;
     line-height:120%;
 }
 .iabAdminCommand {
     line-height:120%;
-    font-size:32px;
+    font-size:260%;
     margin-top:1em;
     margin-bottom: 0;
     color:#BB0077;
 }
 .indexLink {
     line-height:200%;  
-    font-size: 32px;
+    font-size: 260%;
 }
 .iabCommandUsage {
     font-weight:bolder;

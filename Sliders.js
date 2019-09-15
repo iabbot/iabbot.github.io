@@ -8,7 +8,7 @@ function commandNameSlider(name) {
     img.attr("src", "CommandSlider.png");
     img.attr("style", "width:30em; height:4em;");
     txt.text(name);
-    txt.attr("style", "position:relative;bottom:1.25em;right:-1em;font-size:30pt");
+    txt.attr("style", "position:relative;bottom:1.25em;right:-1em;");
     $("body").append(img);
     $("body").append(txt);
 }
