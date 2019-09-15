@@ -14,7 +14,7 @@ function commandNameSlider(name) {
 }
 
 function subcommandCard(name, syntax, note) {
-    var container = $("<div>"), img = $("<img>"), txt = $("<h1>"), body = $("<p>"), syn = $("<span>"), nte = $("<p>");
+    var container = $("<div>"), subcontainer = $("<div>"), img = $("<img>"), txt = $("<h1>"), body = $("<p>"), syn = $("<span>"), nte = $("<p>");
     body.attr("style", "margin-top:-3em;margin-left:75px");
     syn.addClass("iabCommandSyntax");
     syn.html(syntax);
@@ -26,9 +26,11 @@ function subcommandCard(name, syntax, note) {
     img.attr("src","SubcommandNameSlider.png");
     img.attr("style", "width:22em;margin-top:1.5em;")
     txt.html(name);
-    txt.attr("style", "position:relative;bottom:1em;right:-2.5em;font-size:30pt");
-    container.append(img);
-    container.append(txt);
+    txt.attr("style", "position:relative;bottom:1em;right:-2.5em;font-size:30pt;margin-right:6em");
+    subcontainer.attr("style", "text-align:center;vertical-align:middle;line-height:1em;width:300px;");
+    subcontainer.append(img);
+    subcontainer.append(txt);
+    container.append(subcontainer);
     container.append(body);
     $("body").append(container);
 }
@@ -45,12 +47,15 @@ function p(parahtml) {
 
 function SubcommandsSlider() {
     var img = $("<img>"), txt = $("<h1>");
+    var div = $("<div>");
+    div.attr("style", "text-align:center;vertical-align:middle;line-height:1em;width:300px;");
     img.attr("src", "SubcommandSlider.png");
     img.attr("style", "width:25em; height:4em; margin-bottom: 0px");
     txt.text("Subcommands");
-    txt.attr("style", "position:relative;bottom:1em;right:-1.5em;font-size:30pt");
-    $("body").append(img);
-    $("body").append(txt);
+    txt.attr("style", "position:relative;bottom:1em;right:-1.5em;font-size:30pt;margin-right:3em;");
+    div.append(img);
+    div.append(txt);
+    $("body").append(div);
 
 }
 
