@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>  
+<head>
+<title>iab Command Reference - Rex</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="basic.css" rel="stylesheet">
+</head>
+
+<body class="mainbody">
+<a href="index.html" class="indexLink">Return to index</a>
+
+<div class="commandCard">
+    <h1 class="iabCommand">iab!rex</h1>
+    <p>This command manages runtime extensions.</p>
+    <br/>
+    <div class="reasoning">
+        <h3>A quick primer about runtime extensions (rEx)</h3>
+        <p>Runtime extensions are the end-user's ability to add new commands (extensions) to iab while it's running (runtime).<br/>
+        There are a couple things to note:
+        <ul>
+        <li>You can only create up to four runtime extensions unless you become a plus user (see iab!plus)</li>
+        <li>Runtime extensions can only contain text (which can include an image link, but you cannot use it to upload a file.)</li>
+        <li>Runtime extensions cannot be created with the same name as an internal command (which may be changed at some point.)</li>
+        <li>You must be in the same server as the user who created a runtime command to use it.</li>
+        <li>You cannot create a runtime command with the same name as any other command. It is planned to develop a new command syntax for running runtime extensions that uses a username so that duplicate names can be allowed.</li>
+        </ul>
+        <p>Runtime extensions can be run with the prefix <span class="iabCommandSyntax"> rex! </span>(<span class="iabCommandSyntax">rexd</span> if using iabd)</p>
+        <p>Also I'm disclaiming responsibility for runtime extensions. If someone does something mean with it, it's not my fault.</p>
+    </div>
+    <h1> Subcommands </h1>
+    
+    
+    <div class="subCommandCard">
+        <h1 class="iabCommand">Create</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!rex create "trigger "response</p>
+            <p>"trigger represents the string that must be written after rex! to trigger the command. It cannot contain spaces.</p>
+            <p>"response is the response that iab should reply with.</p>
+        </div>
+    </div>
+    <div class="subCommandCard">
+        <h1 class="iabCommand">Delete</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!rex delete "trigger<p>
+            <p>"trigger represents the trigger of the command to delete..</p>
+        </div>
+    </div>
+    <div class="subCommandCard">
+        <h1 class="iabCommand">Deleteall</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!rex deleteall</p>
+            <p>Deletes all of your runtime extensions.</p>
+        </div>
+    </div>
+    <div class="subCommandCard">
+        <h1 class="iabCommand">List</h1>
+        <div class="parameters">
+            <p class="iabCommandSyntax">iab!info list [all]</p>
+            <p>Lists all of your runtime extensions, or all runtime extensions (in your guild) if 'all' is written.</p>
+        </div>
+    </div>
+
+    <br/>
+</div>
+<br/>
+
+</body>
+</html>
