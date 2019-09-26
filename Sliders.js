@@ -6,15 +6,26 @@ function fixVerticalCursor(ems) {
 function commandNameSlider(name) {
     var div = $("<div>"), img = $("<img>"), txt = $("<h1>");
     img.attr("src", "CommandSlider.png");
-    img.attr("style", "width:30em; height:4em;");
+    img.attr("style", "width:20em; height:4em;");
     txt.text(name);
-    txt.attr("style", "position:relative;bottom:1.3em;right:-1em;margin-left:0.5em;margin-right:10em;");
-    div.attr("style", "text-align:center;vertical-align:middle;line-height:1em;width:500px;")
+    txt.attr("style", "position:relative;bottom:1.3em;right:-0.5em;margin-left:0.5em;margin-right:10em;");
+    div.attr("style", "text-align:center;vertical-align:middle;line-height:1em;width:300px;")
     div.append(img);
     div.append(txt);
     $("body").append(div);
     fixVerticalCursor("2.5em");
 }
+function commandNameSlider2(name, parent) {
+    var div = $("<div>"), img = $("<img>"), txt = $("<h1>");
+    img.attr("src", "CommandSlider.png");
+    img.attr("style", "width:20em; height:4em;");
+    txt.text(name);
+    txt.attr("style", "position:relative;bottom:1.3em;right:-0.5em;margin-left:0.5em;margin-right:10em;");
+    div.attr("style", "text-align:center;vertical-align:middle;line-height:1em;width:300px;")
+    div.append(img);
+    div.append(txt);
+    $(parent).append(div);
+   }
 
 function adminCommandNameSlider(name) {
     var div = $("<div>"), img = $("<img>"), txt = $("<h1>");
@@ -91,7 +102,7 @@ function SubcommandsSlider() {
     img.attr("src", "SubcommandSlider.png");
     img.attr("style", "width:25em; height:4em; margin-bottom: 0px");
     txt.text("Subcommands");
-    txt.attr("style", "position:relative;bottom:1em;right:-1.5em;font-size:30pt;margin-right:3em;");
+    txt.attr("style", "position:relative;bottom:1.25em;right:-1.5em;font-size:25pt;margin-right:3em;");
     div.append(img);
     div.append(txt);
     $("body").append(div);
