@@ -10,12 +10,26 @@
         <link href="basic.css" rel="stylesheet">
     </head>
     <body class="mainbody" style="font-size:150%">
+    <div style="width:100%;margin:auto;text-align:center">
         <h1 class="iabCommand" style="font-size:200%">iab Command Reference</h1>
-        <a href="https://discordapp.com/api/oauth2/authorize?client_id=597183583790301199&permissions=126144&redirect_uri=https%3A%2F%2Fdiscordapp.com%2Fapi%2Foauth2%2Fauthorize&scope=bot">The "Look but don't touch" invite link (No role management, etc.)</a>
+        </div>
         <br/>
-        <a href="https://discordapp.com/api/oauth2/authorize?client_id=597183583790301199&permissions=8&redirect_uri=https%3A%2F%2Fdiscordapp.com%2Fapi%2Foauth2%2Fauthorize&scope=bot">The other invite link (Administrator)</a>
-        
-        <div id="PanelParent" style="width:95%;height:35em;background-color:#6385BF">
+        <div style="width:25%;height:4vw;margin:auto;">
+        <a href="https://discordapp.com/api/oauth2/authorize?client_id=597183583790301199&permissions=8&redirect_uri=https%3A%2F%2Fdiscordapp.com%2Fapi%2Foauth2%2Fauthorize&scope=bot">
+            <button class="hlink iabInviteAdmin" 
+            style="width:47.5%;height:100%;background-color:#93a5ff;display:inline-block;float:left;font-size:16pt;border-radius: 2vw; border: .25vw solid;border-color:#7385Ff;"> 
+                Invite to Discord (Administrator) 
+            </button>
+        </a>
+        <a href="https://discordapp.com/api/oauth2/authorize?client_id=597183583790301199&permissions=126144&redirect_uri=https%3A%2F%2Fdiscordapp.com%2Fapi%2Foauth2%2Fauthorize&scope=bot">
+            <button class="hlink iabInviteLow" 
+            style="width:47.5%;height:100%;background-color:#93a5ff;display:inline-block;float:right;font-size:16pt;border-radius: 2vw; border: .25vw solid;border-color:#7385Ff;"> 
+                Invite to Discord (Lower)
+            </button> 
+        </a>
+        </div>
+        <br/>
+        <div id="PanelParent" style="width:75%;height:35em;background-color:#6385BF;margin:auto">
             <div id="CommandSelector" style="overflow-y:auto;width:15%;height:100%;background-color:#7395CF;float:left;display:inline-block;text-align:center;"><p>Commands</p></div>
             <div id="SubcommandSelector" style="overflow-y:auto;width:0%;height:100%;background-color:#5375AF;float:left;display:inline-block;text-align:center;"><p>Subcommands</p></div>
             <div id="panel" style="width:84%;height:100%;float:right;display:inline-block">
@@ -37,7 +51,7 @@
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!50', false);\
                 SetDescription('Generates a 0 or 1.');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
             //avatar
             Button("iab!avatar", "\
                 CollapseSubcommandsPanel();\
@@ -55,7 +69,9 @@
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!cbt', false);\
                 SetDescription('CBT.');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
+            //Converts
+            FButton("iab!convert", "convert.html");
             //Complain
             Button("iab!complain", "\
                 CollapseSubcommandsPanel();\
@@ -109,7 +125,7 @@
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!gensslink', false);\
                 SetDescription('Generates a share-screens link for your currently connected voice chat.');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
             //Inactives
             Button("iab!inactives", "\
                 CollapseSubcommandsPanel();\
@@ -125,19 +141,19 @@
                 SButton('Emote','\
                     SetSyntax(\"iab!info emote [-ec]\", false);\
                     SetDescription(\"Sends info about emotes. If -ec is specified, iab will try to make the output smaller by not including emote names or newlines.\");\
-                    SetParameters([])');\
+                    SetParameters([\"None\"])');\
                 SButton('Invite','\
                     SetSyntax(\"iab!info invite [-ic]\",false);\
                     SetDescription(\"Lists all invites in a server. If -ic is specified, iab will use smaller field names.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 SButton('Guild','\
                     SetSyntax(\"iab!info guild\",false);\
                     SetDescription(\"Sends basic and general information about the server.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 SButton('General','\
                     SetSyntax(\"iab!info general\",false);\
                     SetDescription(\"Equivalent to iab!info guild, iab!info emote, and iab!info invite. -ec and -ic are passed on to their respective commands.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 SButton('User','\
                     SetSyntax(\"iab!info user %\",false);\
                     SetDescription(\"Lists information about a user.\");\
@@ -147,7 +163,7 @@
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!invite', false);\
                 SetDescription('Shh! This command is a trap for those who do not know that iabinv is the real invite command...');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
             //Knows
             FButton("iab!knows", "knows.html");
             
@@ -156,7 +172,7 @@
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!nut', false);\
                 SetDescription('nut.');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
             //Permissions
             Button("iab!permissions", "\
                 CollapseSubcommandsPanel();\
@@ -168,19 +184,19 @@
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!ping', false);\
                 SetDescription('Ping iab.');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
             //Planned
             Button("iab!planned", "\
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!planned', false);\
                 SetDescription('See what I am plotting<a href=\"planned.html\"> here</a>');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
             //Plus
             Button("iab!plus", "\
                 CollapseSubcommandsPanel();\
                 SetSyntax('iab!plus', false);\
                 SetDescription('The eventual premium tier of iab, currently unimplemented');\
-                SetParameters([])");
+                SetParameters([\"None\"])");
             //Remind
             Button("iab!remind", "\
                 CollapseSubcommandsPanel();\
@@ -204,11 +220,11 @@
                 SButton('Deleteall','\
                     SetSyntax(\"iab!rex deleteall\",false);\
                     SetDescription(\"Deletes all of your runtime extensions\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 SButton('List','\
                     SetSyntax(\"iab!rex list [all]\",false);\
                     SetDescription(\"Lists your runtime extensions, or everyones if [all] was specified.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 ");
             //Role
             Button("iab!role", "\
@@ -242,7 +258,7 @@
                 SButton('Empty','\
                     SetSyntax(\"iab!role empty\",true);\
                     SetDescription(\"Shows roles with no users.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 SButton('Selfassignadd','\
                     SetSyntax(\"iab!role selfassignadd $\",true);\
                     SetDescription(\"Adds a role to the self-assign pool.\");\
@@ -273,15 +289,15 @@
                 SButton('Deleteall','\
                     SetSyntax(\"iab!spintext deleteall\",false);\
                     SetDescription(\"Deletes all of your spintexts\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 SButton('Busy','\
                     SetSyntax(\"iab!spintext busy\",false);\
                     SetDescription(\"Will tell you if blender is disabled or busy.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 SButton('List','\
                     SetSyntax(\"iab!spintext list [all]\",false);\
                     SetDescription(\"Lists your runtime extensions, or everyones if [all] was specified.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 ");
             //Suggest
             Button("iab!suggest", "\
@@ -304,14 +320,13 @@
                 SButton('Accept','\
                     SetSyntax(\"iab!vye accept\", true);\
                     SetDescription(\"Sends an invite back to the bot dev.\");\
-                    SetParameters([])');\
+                    SetParameters([\"None\"])');\
                 SButton('Deny','\
                     SetSyntax(\"iab!vye deny M\",true);\
                     SetDescription(\"Denies an invite to be sent to the bot dev, with an optional message M.\");\
-                    SetParameters([]);');\
+                    SetParameters([\"None\"]);');\
                 ");
             
         </script>
-        <a href="convert.html">Fuck me i'm not putting convert into that thing</a>
     </body>
 </html>

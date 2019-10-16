@@ -22,12 +22,12 @@ function SetPanelContents(html) {
         $("#panel").append(html);
 }
 function CollapseSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:0%;height:100%;background-color:#5375AF;float:left;display:inline-block;text-align:center;");
-    $("#panel").attr("style", "width:84%;height:100%;float:right;display:inline-block");
+    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:0%;height:100%;background-color:#5375AF;float:left;display:inline-block;text-align:center;margin:auto;");
+    $("#panel").attr("style", "width:80%;height:100%;float:right;display:inline-block;margin:auto;");
 }
 function ExpandSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:15%;height:100%;background-color:#5375AF;float:left;display:inline-block;text-align:center;");
-    $("#panel").attr("style", "width:70%;height:100%;float:right;display:inline-block");
+    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:15%;height:100%;background-color:#5375AF;float:left;display:inline-block;text-align:center;;margin:auto;");
+    $("#panel").attr("style", "width:65%;height:100%;float:right;display:inline-block;margin:auto;");
 }
 function ClearSubcommands() {
     $("#SubcommandSelector").empty();
