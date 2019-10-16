@@ -4,8 +4,7 @@
     font-size:13.33333333px;
     font-family:Arial;
 }
-}
-.hlink:visited{
+.hlink:visited {
     color:black;
     text-decoration:none;
     font-size:13.33333333px;
@@ -17,7 +16,7 @@
 .iabInviteLow {
     background-color:#FF00FF;
 }
-.hotButton{
+.hotButton {
     width:33.3333%;
     height:100%;
     background-color:#93a5ff;
