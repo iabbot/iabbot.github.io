@@ -1,77 +1,15 @@
 body {
-    line-height:100%;
     font-family: 'Exo 2', sans-serif;
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
-p{
+p {
     margin-top: 4px;
     margin-bottom: 4px;
 }
-code{
-    margin-top: 0px;
-    margin-bottom: 16px;
-}
-h1{
-    margin-top: 8px;
-    margin-bottom: 32px;
-}
-h2{
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-.afterSlider {
-    margin-top:-5em;
-}
 .mainbody {
     background-color: #93A5FF;
-}
-.iabCommand {
-    font-size:260%;
-    margin-top:1em;
-    margin-bottom: 0;
-    line-height:120%;
-}
-.iabAdminCommand {
-    line-height:120%;
-    font-size:260%;
-    margin-top:1em;
-    margin-bottom: 0;
-    color:#BB0077;
-}
-.indexLink {
-    line-height:200%;  
-    font-size: 260%;
-}
-.iabCommandUsage {
-    font-weight:bolder;
-}
-.parameters {
-   // background-color: #A3B5FF;
-}
-.iabCommandExample {
 }
 .iabCommandSyntax {
     margin-top:0.5em;
     font-weight:bold;
     font-family: 'Courier New';
-}
-.iabCommandUsageBody {
-}
-.iabCommandExampleBody {
-}
-.commandCard {
-    width:80%;
-    margin: 0 auto;
-    background-color:#8395EF;
-    line-height:120%;
-}
-.subCommandCard {
-    width:80%;
-    margin: 0 auto;
-    background-color:#8395EF;
-    line-height:120%;
-}
-.reasoning {
-    background-color:#A395EF;
 }
