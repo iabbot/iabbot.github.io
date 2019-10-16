@@ -17,3 +17,21 @@
 .iabInviteLow {
     background-color:#FF00FF;
 }
+.hotButton{
+    width:33.3333%;
+    height:100%;
+    background-color:#93a5ff;
+    border-radius: 2vw; 
+    border: .25vw solid;
+    border-color:#7385Ff;
+}
+.cmdButton {
+    width:100%;
+    height:auto;
+    background-color:white;
+    border:none;
+    color:black;    
+    display:inline-block;
+    text-align:center;
+    text-decoration:none;
+}
