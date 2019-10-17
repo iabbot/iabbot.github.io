@@ -14,7 +14,7 @@ function SetParameters(arrayParams) {
         pars.text(item);
         params.append(pars);
         ParamsHeight += 5;
-    })
+    });
     params.attr("style", "width:100%;height:" + String(ParamsHeight) + "%;display:inline-block");
 }
 function SetPanelContents(html) {

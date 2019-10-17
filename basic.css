@@ -20,3 +20,13 @@ p {
     font-weight:bold;
     font-family: 'Courier New';
 }
+.inline {
+    display: inline-block;
+}
+.wide {
+    width: 100%;
+}
+.tall {
+    height: 100%;
+}
+    

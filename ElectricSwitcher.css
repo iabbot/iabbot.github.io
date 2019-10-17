@@ -2,15 +2,6 @@
     border:2px solid #1c7c54;
     border-radius: 25px;
 }
-.inline {
-    display: inline-block;
-}
-.wide {
-    width: 100%;
-}
-.tall {
-    height: 100%;
-}
 .commandScroll {
     overflow-y:auto;
     height:100%;
@@ -57,7 +48,6 @@
     background-color:#3cAc94;
     color:white;
 }
-
 .cmdButton:not(:hover) {
     animation-name: unanimateButton;
     animation-duration: 0.2s;
@@ -77,7 +67,6 @@
     background-color: #76f7bf;
     color:black;
 }
-
 @keyframes animateButton {
     from { background-color: #76f7bf; color:black;}
     to { background-color: #3cAc94; color:white;}
