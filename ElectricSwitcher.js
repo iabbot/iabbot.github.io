@@ -22,12 +22,12 @@ function SetPanelContents(html) {
     $("#panel").append(html);
 }
 function CollapseSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:0%;height:100%;background-color:#2c2f33;float:left;display:inline-block;text-align:center;margin:auto;");
-    $("#panel").attr("style", "width:80%;height:100%;float:right;display:inline-block;margin:auto;");
+    $("#SubcommandSelector").attr("style", "width:0%;border-radius:25px;");
+    $("#panel").attr("style", "width:75%;float:right;margin-right:5%");
 }
 function ExpandSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:20%;height:100%;background-color:#2c2f33;float:left;display:inline-block;text-align:center;;margin:auto;");
-    $("#panel").attr("style", "width:60%;height:100%;float:right;display:inline-block;margin:auto;");
+    $("#SubcommandSelector").attr("style", "width:20%;border-radius:25px;");
+    $("#panel").attr("style", "width:55%;float:right;margin-right:5%");
 }
 function ClearSubcommands() {
     $("#SubcommandSelector").empty();
@@ -231,7 +231,7 @@ function PopulatePanel() {
     Button("iab!planned", "\
         CollapseSubcommandsPanel();\
         SetSyntax('iab!planned', false);\
-        SetDescription('See what I am plotting<a href=\"planned.html\"> here</a>');\
+        SetDescription('See what I am plotting <a href=\"planned.html\">here</a>');\
         SetParameters([\"None\"])");
     //Plus
     Button("iab!plus", "\
