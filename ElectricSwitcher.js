@@ -45,7 +45,7 @@ function SetDescription(text) {
 }
 function SetSyntax(syn, admin) {
     $("#syntax").text(syn);
-    $("#syntax").attr("style", "font-family:courier;color:" + (admin ? "#BB0077" : "black"));
+    $("#syntax").attr("style", "font-family:courier;color:" + (admin ? "#BB0077" : "white"));
 }
 function Button(name, func) {
     var butt = $("<button>");
