@@ -18,12 +18,14 @@
                 </button> 
             </a>
             </div>
-        <h1 style="color:#76f7bf"> How does iab calculate image size when it checks limits? </h1>
-        <p>When iab checks to see how large an image is, it is often disparate from the actual image's file size. 
-        This is because iab first uncompresses the image into an ARGB Bitmap, which uses four bytes per pixel. 
-        The limits are set to account for this; Regular users should be able to upload a 2048x2048 image without worries. 
-        Likewise, +1 and +2 users should be able to upload 4096x4096 and 8192x8192 images respectively. </p>
-        <p>The images do not need to be square. To remain within the limit, the images should simply have equal to or less than the amount of pixels of a 2048x2048 image. 
-        For example, a 4096x1024 image would still be within the limit of a regular user.</p>
+        <div style="width:75%;margin:auto;"> 
+            <h1 style="color:#76f7bf"> How does iab calculate image size when it checks limits? </h1>
+            <p>When iab checks to see how large an image is, it is often disparate from the actual image's file size. 
+            This is because iab first uncompresses the image into an ARGB Bitmap, which uses four bytes per pixel. 
+            The limits are set to account for this; Regular users should be able to upload a 2048x2048 image without worries. 
+            Likewise, +1 and +2 users should be able to upload 4096x4096 and 8192x8192 images respectively. </p>
+            <p>The images do not need to be square. To remain within the limit, the images should simply have equal to or less than the amount of pixels of a 2048x2048 image. 
+            For example, a 4096x1024 image would still be within the limit of a regular user.</p>
+        </div>
     </body>
 </html>
