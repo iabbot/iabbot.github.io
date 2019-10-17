@@ -3,7 +3,7 @@ body {
     font-family: 'Exo 2', sans-serif;
 }
 a {
-color:#32E875;
+    color:#32E875;
 }
 p {
     margin-top: 4px;
@@ -15,6 +15,7 @@ p {
     background-color: #23272A;
 }
 .iabCommandSyntax {
+    color:white;
     margin-top:0.5em;
     font-weight:bold;
     font-family: 'Courier New';
