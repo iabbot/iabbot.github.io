@@ -80,172 +80,98 @@ function SButton(name, func) {
     but.append(p);
     butt.append(but);
     butt.addClass("cmdButton");
-    //butt.attr("style", "width:100%;height:2em;background-color:white;border:none;display:inline-block;text-align:center;text-decoration:none;");
+    butt.attr("onclick", func);
+    $("#SubcommandSelector").append(butt);
+}
+function NewButton(txt, col, syn, adm, des, pars) {
+    var func = "";
+    func += (col ? "CollapseSubcommandsPanel();" : "ExpandSubcommandsPanel();");
+    func += "SetSyntax('" + syn + "'," + (adm ? "true" : "false")+");";
+    func += "SetDescription(\""+des+"\");";
+    func += "SetParameters([";
+    try {
+        pars.forEach( function (item, index) {
+            func += "\"" + item + "\"";
+            func += ((index == pars.length - 1) ? "]" : ",");
+        });
+    }
+    catch  {
+        func += "\"]";
+    }
+    func += ");";
+    var butt = $("<button>");
+    var but = $("<div>");
+    var p = $("<p>");
+    p.text(txt);
+    but.append(p);
+    butt.append(but);
+    butt.addClass("cmdButton");
+    butt.attr("onclick", func);
+    $("#CommandSelector").append(butt);
+}
+function NewSButton(txt, syn, adm, des, pars) {
+    var func = "";
+    func += "SetSyntax('" + syn + "'," + (adm ? "true" : "false")+");";
+    func += "SetDescription(\""+des+"\");";
+    func += "SetParameters([";
+    try {
+        pars.forEach( function (item, index) {
+            func += "\"" + item + "\"";
+            func += ((index == pars.length - 1) ? "]" : ",");
+        });
+    }
+    catch  {
+        func += "\"]";
+    }
+    func += ");";
+    var butt = $("<button>");
+    var but = $("<div>");
+    var p = $("<p>");
+    p.text(txt);
+    but.append(p);
+    butt.append(but);
+    butt.addClass("cmdButton");
     butt.attr("onclick", func);
     $("#SubcommandSelector").append(butt);
 }
 function PopulatePanel() {
+    CollapseSubcommandsPanel();
     SetSyntax('',false);
-    SetParameters(['']);
-    SetDescription('I\'m sorry, but I can\'t use apostrophes in most of these command descriptions.');
-    //50
-    Button("iab!50", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!50', false);\
-        SetDescription('Generates a 0 or 1.');\
-        SetParameters([\"None\"])");
-    //avatar
-    Button("iab!avatar", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!avatar %', false);\
-        SetDescription('Sends a users avatar.');\
-        SetParameters([\"%: The user whose avatar is to be posted\"])");
-    //Bruh
-    Button("iab!bruh", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!bruh % R', false);\
-        SetDescription('Issues a bruh certificate to a user.');\
-        SetParameters([\"%: The user to bruh\", \"R: The reason for certification\"])");
-    //CBT
-    Button("iab!CBT", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!cbt', false);\
-        SetDescription('CBT.');\
-        SetParameters([\"None\"])");
-    //Converts
-    FButton("iab!convert", "convert.html");
-    //Complain
-    Button("iab!complain", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!complain \"',false);\
-        SetParameters(['\" refers to the message to write to the console']);\
-        SetDescription('Writes a message to the console.');");
-    //Count
-    Button("iab!count", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!count M', false);\
-        SetDescription('Counts the length of a message');\
-        SetParameters([\"M: The message to count\"])");
-    //Die
-    Button("iab!die", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!die #', true);\
-        SetDescription('Deletes iab messages.');\
-        SetParameters([\"#: The number of messages to process\"])");
-    //Mur
-    Button("iab!mur", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!mur % #', true);\
-        SetDescription('Deletes targeted user messages.');\
-        SetParameters([\"%: The user to target\", \"#: The number of messages to process\"])");
-    //Sui
-    Button("iab!sui", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!sui #', false);\
-        SetDescription('Deletes your messages.');\
-        SetParameters([\"#: The number of messages to process\"])");
-    //Edge
-    Button("iab!edge", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!edge {Unordered parameters}', false);\
-        SetDescription('Generate an edgemap. These are the current defaults: bias 0, color FFFFFF, multiplier 1, radius 1, tolerance 30, alphamode 1. If there is no image linked or attached, iab will search up to 32 images above the command message to find an image to edgemap. There are three alpha modes: 0 means that if a pixel is an edge, its alpha channel will be 255, 1 uses the alpha of the iamge, and 2 uses the amount of difference between the pixels to determine its alpha.');\
-        SetParameters([\"Image: The image to create an edgemap from. Can be linked, attached, or linked from MEGA with -mega (link)\", \"-bias #: Add or subtract this amount from the final alpha amounts.\", \"-color hex#: The color of the edgemap.\", \"-hue: Uses the color of the image instead of the color specified, if any.\", \"-multiplier #: Multiply the alpha value by this number (before bias)\", \"-radius #: Use this radius to search for edges.\", \"-tolerance #: The amount a channel must differ to be considered an edge.\", \"-alphamode #: The mode of alpha calculation to use. See the description.\"])");
-    //Edgy
-    Button("iab!edgy", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!edgy B T F', false);\
-        SetDescription('Attempts to soften a poorly cut png. All parameters (except image lol) are optional');\
-        SetParameters([\"Image: Attached only currently.\", \"B: lowers the alpha of non-opaque selected pixels by this amount.\", \"T: The tolerance (in shades of alpha) from the extremes to select pixels.\", \"F: Feather the alpha by this many pixels.\"])");
-    //Gencol
-    Button("iab!gencol", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!gencol R G B', false);\
-        SetDescription('Generates a small image of a solid color.');\
-        SetParameters([\"R: Red channel value\", \"G: Green channel value\", \"B: Blue channel value\"])");
-    //Gensslink
-    Button("iab!gensslink", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!gensslink', false);\
-        SetDescription('Generates a share-screens link for your currently connected voice chat.');\
-        SetParameters([\"None\"])");
-    //Inactives
-    Button("iab!inactives", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!inactives D T', true);\
-        SetDescription('Gets a list of users that have not sent messages recently. I am notified when you start an inactives count.');\
-        SetParameters([\"D: How many days to consider recent (7 = one week ago is still recent)\", \"T: Number of messages to go through per channel (2000 max)\"])");
-    //Info
-    Button("iab!info", "\
+    SetParameters(['I wonder if I should use this space for a changelog']);
+    SetDescription('JavaScript gang.');
+    NewButton("iab!50", true, 'iab!50', false, "Generates a 0 or 1.", ["None"]);
+    NewButton("iab!avatar", true, 'iab!avatar %', false, "Sends a user\'s avatar.", ["%: The user whose avatar should be sent."]);
+    NewButton("iab!bruh", true, 'iab!bruh % R', false, "Issues a bruh certificate to a user.", ["%: The bruh boi", "R: Reason for certification"]);
+    NewButton("iab!cbt", true, 'iab!cbt', false, "CBT.", ["None"]);
+    FButton  ("iab!convert", "convert.html");
+    NewButton("iab!complain", true, "iab!complain M", false, "Writes a message to the console.", ["M: The message to write to the console."]);
+    NewButton("iab!count", true, "iab!count M", false, "Counts the length of a message.", ["M: The message to count."]);
+    NewButton("iab!die", true, "iab!die #", true, "Deletes iab's messages.", ["#: The number of messages to process."]);
+    NewButton("iab!mur", true, "iab!mur % #", true, "Deletes another user's messages.", ["%: The user to target.", "#: The number of messages to process."]);
+    NewButton("iab!sui", true, "iab!sui #", false, "Deletes your own messages.", ["#: The number of messages to process."]);
+    NewButton("iab!edge", true, "iab!edge {unorderedParameters}", false, "Generates an edgemap. If no options are specified, these values are used: Bias 0, Color FFFFFF, Multiplier 1, Search-Radius 1, Tolerance 30, AlphaMode 1. If no image is specified, iab will search up to 32 messages above the calling message to find an applicable image. Alpha Modes: 0 means that pixels defined as edges have 255 alpha, and other pixels have 0 alpha. 1 uses the image's old alpha value, and 2 uses the contrast of the pixels to determine the alpha.", ["Image: The image to create an edgemap from. Can be linked, attached, or linked from MEGA with -mega (link)", "-bias #: Add or subtract this amount from the final alpha amounts.", "-color hex#: The color of the edgemap.", "-hue: Uses the color of the image instead of the color specified, if any.", "-multiplier #: Multiply the alpha value by this number (before bias)", "-radius #: Use this radius to search for edges.", "-tolerance #: The amount a channel must differ to be considered an edge.", "-alphamode #: The mode of alpha calculation to use. See the description."]);
+    NewButton("iab!edgy", true, "iab!edgy B T F", false, "Attempts to soften a poorly cut png. All parameters are optional (except image lol)", ["B: Lowers the alpha of selected pixels by this amount.", "The amount the alpha channel must differ from the extremes to be selected (so 16 would be alpha values 16 - 239).", "F: The range, in pixels, to feather the alpha values."]);
+    NewButton("iab!gencol", true, "iab!gencol R G B (or iab!generatecolor R G B)", false, "Generates a small image of a specified color. I'm not writing the parameters because they're obvious. Fight me.", ["arr gee bee"]);
+    NewButton("iab!gensslink", true, "iab!gensslink", false, "Generates a link that users can click to share screens.", ["None"]);
+    NewButton("iab!inactives", true, "iab!inactives D T", true, "Gives a list of users that haven't sent messages recently.", ["D: The amount of days in the past to consider 'recent'.", "T: The number of messages to go through (Max 2000)"]);
+    Button   ("iab!info", "\
         ExpandSubcommandsPanel();\
         ClearSubcommands();\
         SetSyntax('',false);\
         SetDescription('');\
-        SButton('Emote','\
-            SetSyntax(\"iab!info emote [-ec]\", false);\
-            SetDescription(\"Sends info about emotes. If -ec is specified, iab will try to make the output smaller by not including emote names or newlines.\");\
-            SetParameters([\"None\"])');\
-        SButton('Invite','\
-            SetSyntax(\"iab!info invite [-ic]\",false);\
-            SetDescription(\"Lists all invites in a server. If -ic is specified, iab will use smaller field names.\");\
-            SetParameters([\"None\"]);');\
-        SButton('Guild','\
-            SetSyntax(\"iab!info guild\",false);\
-            SetDescription(\"Sends basic and general information about the server.\");\
-            SetParameters([\"None\"]);');\
-        SButton('General','\
-            SetSyntax(\"iab!info general\",false);\
-            SetDescription(\"Equivalent to iab!info guild, iab!info emote, and iab!info invite. -ec and -ic are passed on to their respective commands.\");\
-            SetParameters([\"None\"]);');\
-        SButton('User','\
-            SetSyntax(\"iab!info user %\",false);\
-            SetDescription(\"Lists information about a user.\");\
-            SetParameters([\"%: The user to examine\"]);');");
-    //Invite
-    Button("iab!invite", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!invite', false);\
-        SetDescription('Shh! This command is a trap for those who do not know that iabinv is the real invite command...');\
-        SetParameters([\"None\"])");
-    //Knows
-    FButton("iab!knows", "knows.html");
-    
-    //Nut
-    Button("iab!nut", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!nut', false);\
-        SetDescription('nut.');\
-        SetParameters([\"None\"])");
-    //Permissions
-    Button("iab!permissions", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!permissions %', false);\
-        SetDescription('Sends a permissions image for a user');\
-        SetParameters([\"%: The user to target, optional. If none is supplied, it uses your user.\"])");
-    //Ping
-    Button("iab!ping", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!ping', false);\
-        SetDescription('Ping iab.');\
-        SetParameters([\"None\"])");
-    //Planned
-    Button("iab!planned", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!planned', false);\
-        SetDescription('See what I am plotting <a href=\"planned.html\">here</a>');\
-        SetParameters([\"None\"])");
-    //Plus
-    Button("iab!plus", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!plus', false);\
-        SetDescription('The eventual premium tier of iab, currently unimplemented');\
-        SetParameters([\"None\"])");
-    //Remind
-    Button("iab!remind", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!remind # T', false);\
-        SetDescription('Remind yourself after a certain amount of time (This is lost if iab is restarted.)');\
-        SetParameters([\"#: The number of seconds to wait\", \"T: The text to send you\"])");
-    //Rex
+        NewSButton('Emote', 'iab!info emote [-ec]', false, 'Sends info about emotes. If -ec is specified, iab will make the output smaller.', ['None']);\
+        NewSButton('Invite', 'iab!info invite [-ic]', false, 'Sends info about invites. If -ic is specified, iab will use shorter field names.', ['None']);\
+        NewSButton('Guild', 'iab!info guild', false, 'Sends general information about the server.', ['None']);\
+        NewSButton('General', 'iab!info general [-ic] [-ec]', false, 'Equivalent to iab!info guild, iab!info emote, and iab!info invite. -ec and -ic are passed to their respective commands.', ['None']);\
+        NewSButton('User', 'iab!info user %', false, 'Lists information about a user.', ['%: The user to examine.']);");
+    NewButton("iab!invite", true, "iab!invite", false, "Shh! It's a trap for people who don't know that the real invite command is iabinv.", ["None."]);
+    FButton  ("iab!knows", "knows.html");
+    NewButton("iab!nut", true, "iab!nut", false, "Nut.", ["Nut."]);
+    NewButton("iab!permissions", true, "iab!permissions %", false, "Sends a flashy image containing a user's permissions. A red name means that the user has Change Nickname.", ["%: The user to examine."]);
+    NewButton("iab!ping", true, "iab!ping", false, "Ping iab. iab does not like it when you ping it, but you still can.", ["None."]);
+    NewButton("iab!planned", true, "iab!planned", false, "See what I am plotting <a href='planned.html'>here.</a>", ["None."]);
+    NewButton("iab!plus", true, "iab!plus", false, "The eventual premium tier of iab. It's currently not implemented (since the Patreon isn't live), but you can still read about it.", ["None."]);
+    NewButton("iab!remind", true, "iab!remind # T", false, "iab will remind you about something (This is currently lost if iab is restarted.)", ["#: The number of seconds to wait before sending the reminder.", "T: The message to send."]);
     Button("iab!rex", "\
         ExpandSubcommandsPanel();\
         ClearSubcommands();\
@@ -273,100 +199,36 @@ function PopulatePanel() {
         ExpandSubcommandsPanel();\
         ClearSubcommands();\
         SetSyntax('',false);\
-        SButton('Assign','\
-            SetSyntax(\"iab!role assign % $\",true);\
-            SetDescription(\"Assigns a role to a user\");\
-            SetParameters([\"%: The user to target\", \"$: The role to assign\"])');\
-        SButton('Assignall','\
-            SetSyntax(\"iab!role assignall $\",true);\
-            SetDescription(\"Assigns a role to every user\");\
-            SetParameters([\"$: The role to assign\"]);');\
-        SButton('Unassign','\
-            SetSyntax(\"iab!role unassign % $\",true);\
-            SetDescription(\"Unassigns a role from a user\");\
-            SetParameters([\"%: The user to target\",\"$: The role to unassign\"]);');\
-        SButton('Unassignall','\
-            SetSyntax(\"iab!role unassignall $\", true);\
-            SetDescription(\"Unassigns a role from every user. Internally, this deletes the role and recreates it in-place, so be careful.\");\
-            SetParameters([\"$: The role to unassign\"]);');\
-        SButton('Create','\
-            SetSyntax(\"iab!role create #  N \",true);\
-            SetDescription(\"Creates a role with a given name and color\");\
-            SetParameters([\"#: The color for the role (optional)\", \"N: The name of the role\"]);');\
-        SButton('Delete','\
-            SetSyntax(\"iab!role delete $\",true);\
-            SetDescription(\"Deletes a role.\");\
-            SetParameters([\"$: The role to delete\"]);');\
-        SButton('Empty','\
-            SetSyntax(\"iab!role empty\",true);\
-            SetDescription(\"Shows roles with no users.\");\
-            SetParameters([\"None\"]);');\
-        SButton('Selfassignadd','\
-            SetSyntax(\"iab!role selfassignadd $\",true);\
-            SetDescription(\"Adds a role to the self-assign pool.\");\
-            SetParameters([\"$: The role to add.\"]);');\
-        SButton('Selfassignremove','\
-            SetSyntax(\"iab!role selfassignremove $\",true);\
-            SetDescription(\"Removes a role from the self-assign pool.\");\
-            SetParameters([\"$: The role to remove\"]);');\
-        SButton('Selfassign','\
-            SetSyntax(\"iab!role selfassign $\",false);\
-            SetDescription(\"Assigns a role to yourself.\");\
-            SetParameters([\"$: The role to assign\"]);');\
-        ");
+        NewSButton('Assign', 'iab!role assign % $', true, 'Assigns a role to a user.', ['%: The user to target.', '$: The role to assign']);\
+        NewSButton('Assignall', 'iab!role assignall $', true, 'Assigns a role to every user.', ['$: The role to assign']);\
+        NewSButton('Unassign', 'iab!role unassign % $', true, 'Unassigns a role to a user.', ['%: The user to target.', '$: The role to unassign']);\
+        NewSButton('Unassignall', 'iab!role unassignall $', true, 'Unassigns a role to every user.', ['$: The role to unassign']);\
+        NewSButton('Create', 'iab!role create # N', true, 'Creates a new role.', ['#: The color of the role (decimal, optional)', \"N: The role's name\"]);\
+        NewSButton('Delete', 'iab!role Delete $', true, 'Deletes a role.', ['$: The role to delete']);\
+        NewSButton('Empty', 'iab!role empty', true, 'Returns a list of roles with no users.', [\"None\"]);\
+        NewSButton('Selfassignadd', 'iab!role selfassignadd $', true, 'Adds a role to the self-assign pool.', [\"$: The role to add.\"]);\
+        NewSButton('Selfassignremove', 'iab!role selfassignremove $', true, 'Removes a role from the self-assign pool.', [\"$: The role to remove.\"]);\
+        NewSButton('Selfassign', 'iab!role selfassign $', false, 'Assigns a role from the self-assign pool to yourself.', [\"$: The role to assign.\"]);");
     //Spintext
     Button("iab!spintext", "\
         ExpandSubcommandsPanel();\
         ClearSubcommands();\
         SetSyntax('',false);\
         SetDescription('');\
-        SButton('Create','\
-            SetSyntax(\"iab!spintext create # T I\",false);\
-            SetDescription(\"Creates a new spintext\");\
-            SetParameters([\"#: An optional decimal number that represents the zoom for the spintext\", \"T: The text to generate\", \"I: an optional image attachment to use as a texture.\"])');\
-        SButton('Delete','\
-            SetSyntax(\"iab!spintext delete #\",false);\
-            SetDescription(\"Deletes a spintext\");\
-            SetParameters([\"#: The spintext to delete\"]);');\
-        SButton('Deleteall','\
-            SetSyntax(\"iab!spintext deleteall\",false);\
-            SetDescription(\"Deletes all of your spintexts\");\
-            SetParameters([\"None\"]);');\
-        SButton('Busy','\
-            SetSyntax(\"iab!spintext busy\",false);\
-            SetDescription(\"Will tell you if blender is disabled or busy.\");\
-            SetParameters([\"None\"]);');\
-        SButton('List','\
-            SetSyntax(\"iab!spintext list [all]\",false);\
-            SetDescription(\"Lists your runtime extensions, or everyones if [all] was specified.\");\
-            SetParameters([\"None\"]);');\
-        ");
-    //Suggest
-    Button("iab!suggest", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!suggest T', false);\
-        SetDescription('Write a suggestion that persists if I restart the bot.');\
-        SetParameters([\"T: The text of the suggestion.\"])");
-    //Todec
-    Button("iab!todec", "\
-        CollapseSubcommandsPanel();\
-        SetSyntax('iab!todec #', false);\
-        SetDescription('Converts a hex number to decimal.');\
-        SetParameters([\"#: The hex number to convert\"])");
+        NewSButton('Create', 'iab!spintext create # T I', false, 'Creates a new spintext', ['#: The amount to zoom the camera (Optional, 0.66)', 'T: The text to create', 'I: Optional image attachment as texture']);\
+        NewSButton('Delete', 'iab!spintext delete #', false, 'Deletes a spintext', ['#: The ID of the spintext (given by create)']);\
+        NewSButton('Deleteall', 'iab!spintext deleteall', false, 'Deletes all of your spintexts', ['None.']);\
+        NewSButton('Busy', 'iab!spintext busy', false, 'Returns whether or not blender is busy or disabled.', ['None.']);\
+        NewSButton('Recall', 'iab!spintext recall #', false, 'Resends a spintext.', ['#: The ID of the spintext (given by create)']);");
+    NewButton("iab!suggest", true, "iab!suggest S", false, "Writes a suggestion that persists if the bot restarts.", ["S: the suggestion."]);
+    NewButton("iab!todec", true, "iab!todec H#", false, "Parses a hex number to decimal..", ["H#: The number (in hex, no prefix) to convert."]);
     //Vye
     Button("iab!vye", "\
         ExpandSubcommandsPanel();\
         ClearSubcommands();\
         SetSyntax('',false);\
         SetDescription('');\
-        SButton('Accept','\
-            SetSyntax(\"iab!vye accept\", true);\
-            SetDescription(\"Sends an invite back to the bot dev.\");\
-            SetParameters([\"None\"])');\
-        SButton('Deny','\
-            SetSyntax(\"iab!vye deny M\",true);\
-            SetDescription(\"Denies an invite to be sent to the bot dev, with an optional message M.\");\
-            SetParameters([\"None\"]);');\
-        ");
+        NewSButton('Accept', 'iab!vye accept', true, 'Sends an invite back to the bot dev. (For troubleshooting, etc.)', ['None.']);\
+        NewSButton('Deny', 'iab!vye deny M', true, 'Denies an invite back to the bot dev, with an optional message.', ['M: A message to write to the console.']);");
             
 }
