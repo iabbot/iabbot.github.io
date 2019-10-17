@@ -22,12 +22,12 @@ function SetPanelContents(html) {
     $("#panel").append(html);
 }
 function CollapseSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:0%;height:100%;background-color:#5375AF;float:left;display:inline-block;text-align:center;margin:auto;");
+    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:0%;height:100%;background-color:#2c2f33;float:left;display:inline-block;text-align:center;margin:auto;");
     $("#panel").attr("style", "width:80%;height:100%;float:right;display:inline-block;margin:auto;");
 }
 function ExpandSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:15%;height:100%;background-color:#5375AF;float:left;display:inline-block;text-align:center;;margin:auto;");
-    $("#panel").attr("style", "width:65%;height:100%;float:right;display:inline-block;margin:auto;");
+    $("#SubcommandSelector").attr("style", "overflow-y:auto;width:20%;height:100%;background-color:#2c2f33;float:left;display:inline-block;text-align:center;;margin:auto;");
+    $("#panel").attr("style", "width:60%;height:100%;float:right;display:inline-block;margin:auto;");
 }
 function ClearSubcommands() {
     $("#SubcommandSelector").empty();
@@ -79,7 +79,8 @@ function SButton(name, func) {
     p.text(name);
     but.append(p);
     butt.append(but);
-    butt.attr("style", "width:100%;height:2em;background-color:white;border:none;display:inline-block;text-align:center;text-decoration:none;");
+    butt.addClass("cmdButton");
+    //butt.attr("style", "width:100%;height:2em;background-color:white;border:none;display:inline-block;text-align:center;text-decoration:none;");
     butt.attr("onclick", func);
     $("#SubcommandSelector").append(butt);
 }

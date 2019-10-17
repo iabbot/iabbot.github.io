@@ -1,5 +1,9 @@
 body {
+    color:white;
     font-family: 'Exo 2', sans-serif;
+}
+a {
+color:#32E875;
 }
 p {
     margin-top: 4px;
@@ -8,7 +12,7 @@ p {
     padding-bottom:1px;
 }
 .mainbody {
-    background-color: #93A5FF;
+    background-color: #23272A;
 }
 .iabCommandSyntax {
     margin-top:0.5em;

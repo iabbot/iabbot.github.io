@@ -1,3 +1,8 @@
+#PanelParent {
+    border:2px solid #1c7c54;
+    border-radius: 25px;
+}
+
 .hlink {
     color:black;
     text-decoration:none;
@@ -11,20 +16,57 @@
     font-family:Arial;
 }
 .hotButton {
+    cursor: pointer;
     width:33.3333%;
     height:100%;
-    background-color:#93a5ff;
+    background-color:#76F7BF;
     border-radius: 2vw; 
     border: .25vw solid;
-    border-color:#7385Ff;
+    border-color:#2C2F33;
 }
 .cmdButton {
+    cursor: pointer;
     width:100%;
     height:auto;
-    background-color:white;
+    background-color: #76f7bf;
     border:none;
     color:black;    
     display:inline-block;
     text-align:center;
     text-decoration:none;
+}
+.cmdButton:hover {
+    animation-name: animateButton;
+    animation-duration: 0.2s;
+    background-color:#3cAc94;
+    color:white;
+}
+
+.cmdButton:not(:hover) {
+    animation-name: unanimateButton;
+    animation-duration: 0.2s;
+    background-color: #76f7bf;
+    color:black;
+}
+.hotButton:hover {
+    animation-name: animateButton;
+    animation-duration: 0.2s;
+    background-color:#3cAc94;
+    color:white;
+}
+
+.hotButton:not(:hover) {
+    animation-name: unanimateButton;
+    animation-duration: 0.2s;
+    background-color: #76f7bf;
+    color:black;
+}
+
+@keyframes animateButton {
+    from { background-color: #76f7bf; color:black;}
+    to { background-color: #3cAc94; color:white;}
+}
+@keyframes unanimateButton {
+    from { background-color: #3cAc94;color:white;}
+    to { background-color: #76f7bf;color:black;}
 }
