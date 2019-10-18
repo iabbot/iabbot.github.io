@@ -1,15 +1,12 @@
-function returnNut(parent) {
-    return "<script>commandNameSlider2(\"Nut\", "+parent+");</script><p>nut</p>";
-}
+var SubcommandsSelectorWidth = 15;
 function SetParameters(arrayParams) {
-    var params = $("#parameters");
+    var params = $("#parameters"), paramsName = $("<p>");
     params.empty();
-    var paramsName = $("<p>");
     paramsName.text("PARAMETERS");
     paramsName.attr("style", "font-size:12pt");
     params.append(paramsName);
     var ParamsHeight = 0;
-    arrayParams.forEach(function(item, index) {
+    arrayParams.forEach(function (item, index) {
         var pars = $("<p>");
         pars.text(item);
         params.append(pars);
@@ -17,17 +14,13 @@ function SetParameters(arrayParams) {
     });
     params.attr("style", "width:100%;height:" + String(ParamsHeight) + "%;display:inline-block");
 }
-function SetPanelContents(html) {
-    $("#panel").empty();
-    $("#panel").append(html);
-}
 function CollapseSubcommandsPanel() {
     $("#SubcommandSelector").attr("style", "width:0%;border-radius:25px;");
     $("#panel").attr("style", "width:75%;float:right;margin-right:5%");
 }
 function ExpandSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "width:20%;border-radius:25px;");
-    $("#panel").attr("style", "width:55%;float:right;margin-right:5%");
+    $("#SubcommandSelector").attr("style", "width:" + SubcommandsSelectorWidth + "%;border-radius:25px;");
+    $("#panel").attr("style", "width:" + (75 - SubcommandsSelectorWidth) + "%;float:right;margin-right:5%");
 }
 function ClearSubcommands() {
     $("#SubcommandSelector").empty();
@@ -59,11 +52,8 @@ function Button(name, func) {
     $("#CommandSelector").append(butt);
 }
 function FButton(name, func) {
-    var aA = $("<a>");
-    aA.attr("href",func);
-    var butt = $("<button>");
-    var but = $("<div>");
-    var p = $("<p>");
+    var aA = $("<a>"), butt = $("<button>"), but = $("<div>"), p = $("<p>");
+    aA.attr("href", func);
     p.text(name);
     but.append(p);
     butt.append(but);
@@ -141,6 +131,7 @@ function PopulatePanel() {
     SetDescription('JavaScript gang.');
     NewButton("iab!50", true, 'iab!50', false, "Generates a 0 or 1.", ["None"]);
     NewButton("iab!avatar", true, 'iab!avatar %', false, "Sends a user\'s avatar.", ["%: The user whose avatar should be sent."]);
+    NewButton("iab!allow", true, "iab!allow % P (or iab!unprohibit % P if you hate yourself)", true, "Reallows a user to use a command.", ["%: The user to allow. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
     NewButton("iab!bruh", true, 'iab!bruh % R', false, "Issues a bruh certificate to a user.", ["%: The bruh boi", "R: Reason for certification"]);
     NewButton("iab!cbt", true, 'iab!cbt', false, "CBT.", ["None"]);
     FButton  ("iab!convert", "convert.html");
@@ -171,34 +162,27 @@ function PopulatePanel() {
     NewButton("iab!ping", true, "iab!ping", false, "Ping iab. iab does not like it when you ping it, but you still can.", ["None."]);
     NewButton("iab!planned", true, "iab!planned", false, "See what I am plotting <a href='planned.html'>here.</a>", ["None."]);
     NewButton("iab!plus", true, "iab!plus", false, "The eventual premium tier of iab. It's currently not implemented (since the Patreon isn't live), but you can still read about it.", ["None."]);
+    NewButton("iab!prohibit", true, "iab!prohibit % P", true, "Stops a user from using a certain command.", ["%: The user to deny. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
+    NewButton("iab!prohibitions", true, "iab!prohibitions", true, "Returns a text file that details all the prohibitions in a server.", ["None."]);
     NewButton("iab!remind", true, "iab!remind # T", false, "iab will remind you about something (This is currently lost if iab is restarted.)", ["#: The number of seconds to wait before sending the reminder.", "T: The message to send."]);
     Button("iab!rex", "\
         ExpandSubcommandsPanel();\
         ClearSubcommands();\
         SetSyntax('',false);\
+        SetDescription('');\
+        SetParameters(['']);\
         SetDescription('Runtime extensions are a way to add commands to iab while it is running. Runtime extensions can be used by using the prefix rex! instead of iab!. Whoever made the runtime extension must also be in the server for it to work.');\
-        SButton('Create','\
-            SetSyntax(\"iab!rex create T R\",false);\
-            SetDescription(\"Creates a new runtime extension\");\
-            SetParameters([\"T: The trigger for the command\", \"R: The response for the command\"])');\
-        SButton('Delete','\
-            SetSyntax(\"iab!rex delete T\",false);\
-            SetDescription(\"Deletes a runtime extension\");\
-            SetParameters([\"$: The role to delete\"]);');\
-        SButton('Deleteall','\
-            SetSyntax(\"iab!rex deleteall\",false);\
-            SetDescription(\"Deletes all of your runtime extensions\");\
-            SetParameters([\"None\"]);');\
-        SButton('List','\
-            SetSyntax(\"iab!rex list [all]\",false);\
-            SetDescription(\"Lists your runtime extensions, or everyones if [all] was specified.\");\
-            SetParameters([\"None\"]);');\
-        ");
+        NewSButton('Create', 'iab!rex create T R', false, 'Create a new runtime extension.', ['T: The trigger for the function', 'R: The response for the function']);\
+        NewSButton('Delete', 'iab!rex delete T', false, 'Deletes a runtime extension.', ['T: The trigger for the function']);\
+        NewSButton('Deleteall', 'iab!rex deleteall', false, 'Deletes all of your runtime extensions.', ['None.']);\
+        NewSButton('List', 'iab!rex list [all]', false, 'Lists all of your runtime extensions, or the runtime extensions of everyone in the server if [all] is specified.', ['None.']);");
     //Role
     Button("iab!role", "\
         ExpandSubcommandsPanel();\
         ClearSubcommands();\
         SetSyntax('',false);\
+        SetDescription('');\
+        SetParameters(['']);\
         NewSButton('Assign', 'iab!role assign % $', true, 'Assigns a role to a user.', ['%: The user to target.', '$: The role to assign']);\
         NewSButton('Assignall', 'iab!role assignall $', true, 'Assigns a role to every user.', ['$: The role to assign']);\
         NewSButton('Unassign', 'iab!role unassign % $', true, 'Unassigns a role to a user.', ['%: The user to target.', '$: The role to unassign']);\
@@ -215,6 +199,7 @@ function PopulatePanel() {
         ClearSubcommands();\
         SetSyntax('',false);\
         SetDescription('');\
+        SetParameters(['']);\
         NewSButton('Create', 'iab!spintext create # T I', false, 'Creates a new spintext', ['#: The amount to zoom the camera (Optional, 0.66)', 'T: The text to create', 'I: Optional image attachment as texture']);\
         NewSButton('Delete', 'iab!spintext delete #', false, 'Deletes a spintext', ['#: The ID of the spintext (given by create)']);\
         NewSButton('Deleteall', 'iab!spintext deleteall', false, 'Deletes all of your spintexts', ['None.']);\
@@ -228,6 +213,7 @@ function PopulatePanel() {
         ClearSubcommands();\
         SetSyntax('',false);\
         SetDescription('');\
+        SetParameters(['']);\
         NewSButton('Accept', 'iab!vye accept', true, 'Sends an invite back to the bot dev. (For troubleshooting, etc.)', ['None.']);\
         NewSButton('Deny', 'iab!vye deny M', true, 'Denies an invite back to the bot dev, with an optional message.', ['M: A message to write to the console.']);");
             
