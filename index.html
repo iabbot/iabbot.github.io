@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>iab Command Reference</title>
+        <link rel="stylesheet" href="Libraries/SimpleScrollbar/simple-scrollbar.css">
+        <script src="Libraries/SimpleScrollbar/simple-scrollbar.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="ElectricSwitcher.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
@@ -34,8 +36,8 @@
         <br/>
         
         <div id="PanelParent" style="width:75%;height:28em;background-color:#2c2f33;margin:auto;">
-            <div id="CommandSelector" class="commandScroll" style="width:15%;border-radius:25px;"><p>Commands</p></div>
-            <div id="SubcommandSelector" class="commandScroll" style="width:0%;"><p>Subcommands</p></div>
+            <div id="CommandSelector" ss-container class="commandScroll" style="width:15%;border-radius:25px;"><p>Commands</p></div>
+            <div id="SubcommandSelector" ss-container class="commandScroll" style="width:0%;"><p>Subcommands</p></div>
             <div id="panel" class="inline tall" style="width:84%;float:right;margin-right:10%">
                 <div id="pad" class="inline wide" style="height:3%"></div>
                 <div id="syntax" class="inline wide" style="height:20%">Syntax:</div>
