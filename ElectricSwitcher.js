@@ -157,6 +157,7 @@ function PopulatePanel() {
         NewSButton('User', 'iab!info user %', false, 'Lists information about a user.', ['%: The user to examine.']);");
     NewButton("iab!invite", true, "iab!invite", false, "Shh! It's a trap for people who don't know that the real invite command is iabinv.", ["None."]);
     FButton  ("iab!knows", "knows.html");
+    FButton  ("iab!licenses", "licenses.html");
     NewButton("iab!nut", true, "iab!nut", false, "Nut.", ["Nut."]);
     NewButton("iab!permissions", true, "iab!permissions %", false, "Sends a flashy image containing a user's permissions. A red name means that the user has Change Nickname.", ["%: The user to examine."]);
     NewButton("iab!ping", true, "iab!ping", false, "Ping iab. iab does not like it when you ping it, but you still can.", ["None."]);
