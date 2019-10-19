@@ -11,6 +11,12 @@ p {
     padding-top:1px;
     padding-bottom:1px;
 }
+.lightcolor {
+    color: #1c7c54;
+}
+.darkcolor {
+    color: #76f7bf;
+}
 .mainbody {
     background-color: #23272A;
 }
