@@ -23,6 +23,7 @@
     font-family:Arial;
 }
 .hotButton {
+    font-family:'Exo 2';
     cursor: pointer;
     width:33.3333%;
     height:100%;
@@ -32,6 +33,7 @@
     border-color:#2C2F33;
 }
 .cmdButton {
+    font-family:'Exo 2';
     cursor: pointer;
     width:100%;
     height:auto;
