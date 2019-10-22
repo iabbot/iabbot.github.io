@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iab</title>
+        <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+        <link href="ElectricSwitcher.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9ef58fb9bb.js" crossorigin="anonymous"></script>
+        <link href="basic.css" rel="stylesheet">
+    </head>
+    <body class="mainbody" style="font-size:150%">
+        <div class="wide am tc">
+            <h1 class="iabCommand am" style="font-size:200%;color:white">iab</h1>
+        </div>
+        <br/>
+        <div class="am" style="width:40%;height:4vw;">
+            <a href="https://discordapp.com/api/oauth2/authorize?client_id=597183583790301199&permissions=8&redirect_uri=https%3A%2F%2Fdiscordapp.com%2Fapi%2Foauth2%2Fauthorize&scope=bot">
+            <button class="hlink hotButton" style="float:left;"> 
+            Invite to Discord (Administrator) 
+            </button>
+            </a>
+            <a href="https://discordapp.com/api/oauth2/authorize?client_id=597183583790301199&permissions=126144&redirect_uri=https%3A%2F%2Fdiscordapp.com%2Fapi%2Foauth2%2Fauthorize&scope=bot">
+            <button class="hlink hotButton" style="float:left;"> 
+            Invite to Discord (Lower)
+            </button> 
+            </a>
+            <a href="https://discord.gg/w5tqvFA">
+            <button class="hlink hotButton" style="float:right;">
+            iab Discord Server
+            </button> 
+            </a>
+        </div>
+        <div class="am" style="width:13.33%;height:4vw;">
+            <a href="index.html">
+            <button class="hlink hotButton wide" style="float:right">
+            Command Reference
+            </button> 
+            </a>
+        </div>
+        <div class="am wide" style="height:60em;">
+            <div class="am tall" style="width:70%;">
+                <h1 class="lightcolor">What is iab!rpg?</h1>
+                <p>iab!rpg is a game, run completely under the iab discord bot.</p>
+                <h1 class="lightcolor">How does combat work?</h1>
+                <p>There are four stats to keep track of in combat.</p>
+                <p>First is <i class="far fa-heart"></i>HP. Matthew Colville calls them Hero Points, since when you run out, you can't be heroic anymore. In iab!rpg you just die like a loser, so we'll call them Hit Points.<p>
+                <p>Next is <i class="fas fa-shield-alt"></i>DEF. Defense reduces damage. Pretty standard stuff really.<p>
+                <p>Third is <i class="fas fa-bomb"></i>DMG. DMG determines how much damage you do.</p>
+                <p>Last is <i class="fas fa-running"></i>SPD. SPD determines when you act.</p>
+                <p>The interactions between the stats are pretty simple. Damage is equal to DMG - DEF. Health = HP - Damage. Low speed is better; think of it as 1 SPD = 1 second to act. Thusly, a SPD of 10 means you will attack half as often as something with a SPD of 5.</p>
+                <h2 class="lightcolor">The SPD System</h2>
+                <p>Let's say that a player is fighting an enemy. The player has a base SPD of 10, and the enemy has a base SPD of 15.</p>
+                <p>The player is wielding a staff with a SPD value of 10. Now, the player has a SPD of 20. The enemy is unarmed, and thus has no higher SPD.</p>
+                <p>At the beginning of combat, the SPD Counter (SPDC) - the amount of time elapsed in a fight, starts at 0. Both parties decide on their attacks. Let's say that both of the combatants go for a basic attack. Now, they both have a next action time. The player will get a new action when the SPD Counter is at 20, but the enemy will get a new turn when the SPD Counter is at 15.</p>
+                <p>Consequently, the player will take damage before their attack even goes out. Their attack will be sent on SPDC 20.</p>
+                <p>Let's say now that the player decides to cast a spell. The spell has a SPD value of 40 (it's a massive attack). The player will attack in 60 (10 base + 10 weapon + 40 spell) counts of the SPDC (simply referred to as a 'c' suffix on numbers.) The enemy will recieve four turns during the buildup for the spell. For this reason, it's very important to be careful with how you manage your SPD. It will most definitely be a matter of life or death.</p>
+            </div>
+        </div>
+        <div class="wide am tc" style="height:2em;">
+            <a class="am" href="licenses.html">Licenses</a>
+        </div>
+        <br/>
+    </body>
+</html>
