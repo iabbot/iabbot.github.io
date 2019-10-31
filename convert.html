@@ -1,88 +1,78 @@
 <!DOCTYPE html>
 <html>  
-<head>
-<title>iab Command Reference - convert</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="Sliders.js"></script>
-    <script src="convert.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="basic.css" rel="stylesheet">
-</head>
+    <head>
+        <title>iab Command Reference - convert</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Sliders.js"></script>
+        <script src="convert.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="basic.css" rel="stylesheet">
+    </head>
 
-<body class="mainbody">
+    <body class="mainbody">
 
-    <p>This page is going to succ to write</p>
-    <h1>iab!convert</h1>
-    <a href="index.html">Back to Index</a>
-    <p class="iabCommandSyntax">iab!convert submodule inputunit count outputunit</p>
-    <p>submodule: see <a href="#submodules">submodules</a>.</p>
-    <p>inputunit: see units under submodule</p>
-    <p>count: the number of units to use</p>
-    <p>outputunit: see units under submodule</p>
-    
-    <br/>
-    <p>Example:</p>
-    <p class="iabCommandSyntax">iab!convert storage yobibyte 4 gigabyte</p>
-    <div style="height:6em"> </div>     
+        <p>This page is going to succ to write</p>
+        <h1>iab!convert</h1>
+        <a href="index.html">Back to Index</a>
+        <p class="iabCommandSyntax">iab!convert submodule inputunit count outputunit</p>
+        <p>submodule: see <a href="#submodules">submodules</a>.</p>
+        <p>inputunit: see units under submodule</p>
+        <p>count: the number of units to use</p>
+        <p>outputunit: see units under submodule</p>
+        
+        <br/>
+        <p>Example:</p>
+        <p class="iabCommandSyntax">iab!convert storage yobibyte 4 gigabyte</p>
+        <code>4.83570327845852E+15 gb</code>
+        <div style="height:6em"> </div>     
 
-    <h1 id="submodules">Submodules:</h1>
-    <a href="#length"><h2>length</h2></a>    
-    <a href="#weight"><h2>mass / weight</h2></a>
-    <a href="#storage"><h2>storage </h2></a>
-    <a href="#time"><h2>time</h2></a>
-    <a href="#temp"><h2>temperature</h2></a>
-    <a href="#temp"><h2>money</h2></a>
+        <h1 id="submodules">Submodules:</h1>
+        <a href="#length"><p>length</p></a>    
+        <a href="#weight"><p>mass / weight</p></a>
+        <a href="#storage"><p>storage </p></a>
+        <a href="#time"><p>time</p></a>
+        <a href="#temp"><p>temperature</p></a>
+        <a href="#temp"><p>money</p></a>
 
-    <div style="height:6em"> </div>     
-    <!--Length-->
-    <h1 id="length">Length</h1>
-    <h3><a href="#submodules">Return to submodules.</a></h3>
-    <h2>Accepted Units and Symbols</h2>
-        <script>
-            var rows = [row("Name", "Symbol"), row("Yoctometer", "ym"), row("Zeptometer", "zm"), row("Attometer", "am"), row("Femtometer", "fm"), row("Picometer", "pm"), row("Angstrom", "a"), row("Nanometer", "nm"), row("Micrometer", "um"), row("Millimeter", "mm"), row("Centimeter", "cm"), row("Decimeter", "dm"), row("Meter", "m"), row("Dekameter", "dam"), row("Hectometer", "hm"), row("Kilometer", "km"), row("Megameter", "mmm"), row("Gigameter", "gm"), row("Terameter", "tm"), row("Petameter", "ppm"), row("Exameter", "em"), row("Zettameter", "zzm"), row("Yottameter", "yym"), row("Cable", "cb"), row("Parsec", "pc"), row("Astronomical Unit", "au"), row("Lightsecond", "ls"), row("Lightminute", "lm"), row("Lighthour", "lh"), row("Lightday", "ld"), row("Lightyear", "ly"), row("Inch", "in"), row("Microinch", "min"), row("Hand", "h"), row("Foot", "ft"), row("Furlong", "fur"), row("Mile", "mi"), row("Rod", "rd"), row("Chain", "ch"), row("Fathom", "ftm"), row("Yard", "yd"), row("Nautical Mile (int.)", "nau"), row("Nautical Mile (US)", "usnau"), row("cubit", "c")];
-            table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
-        </script>
-    <div style="height:6em"> </div>     
-    <!--Weight-->
-    <h1 id="weight">Mass/Weight</h1>
-    <h3><a href="#submodules">Return to submodules.</a></h3>
-    <h2>Accepted Units and Symbols</h2>
-        <script>
-            var rows = [row("Name", "Symbol"), row("Yoctogram", "yg"), row("Zeptogram", "zg"), row("Attogram", "ag"), row("Femtogram", "fg"), row("Picogram", "pg"), row("Nanogram", "ng"), row("Microgram", "ug"), row("Milligram", "mg"), row("Centigram", "cg"),row("Decigram", "dg"), row("Carat", "ct"), row("Gram", "g"), row("Grain", "gr"), row("Dekagram", "dag"), row("Hectogram", "hg"), row("Kilogram", "kg"), row("Megagram / Metric ton", "mmg / mt"), row("Gigagram", "gg"), row("Teragram", "tg"), row("Petagram", "ppg"), row("Exagram", "eg"), row("Zettagram", "zzg"), row("Yottagram", "yyg"), row("Dram", ""), row("Ounce", "oz"), row("Pound", "lb"), row("Ounce troy", "ozt"), row("Pound troy","lbt"), row("Pound Metric", "lbm"), row("Stone", "st"), row("Ton (US or 'Short')", "t / ton"), row("Ton(Imperial or 'Long')", "it / iton")   ];
-            table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
-        </script>
-    <div style="height:6em"> </div>
-    <!--Time-->     
-    <h1 id="time">Time</h1>
-    <h3><a href="#submodules">Return to submodules.</a></h3>
-    <h2>Accepted Units and Symbols</h2>
-        <script>
-            var rows = [row("Name", "Symbol"), row("Attosecond", "as"), row("Femtosecond", "fs"), row("Picosecond", "ps"), row("Nanosecond", "ns"), row("Microsecond", "us"), row("Millisecond", "ms"), row("Second", "s"), row("Shake", ""), row("Minute", "m"), row("Hour", "h"), row("Day", "d"), row("Week", "w"), row("Month", "mo"), row("Year", "y"), row("Decade", ""), row("Century", "c"), row("Millenia","")];
-            table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
-        </script>
-    <p>Where week is defined as 7 days, and month is defined as 30 days. A year is a calendar year ( 365 days ) </p>
-    <div style="height:6em"> </div>     
-    <!--Temp-->
-    <h1 id="temp">Temperature</h1>
-    <h3><a href="#submodules">Return to submodules.</a></h3>
-    <h2>Accepted Units and Symbols</h2>
-        <script>
-            var rows = [row("Name", "Symbol"), row("Fahrenheit", "F"), row("Rankine", "R"), row("Celsius / Centigrade", "C"), row("Kelvin", "K")];
-            table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
-        </script>
-    <div style="height:6em"> </div>     
-    <!--Money-->
-    <h1 id="money">Money</h1>
-    <h3><a href="#submodules">Return to submodules.</a></h3>
-    <h2>Accepted Units and Symbols</h2>
-        <p>Every real-world currency, excluding currencies such as Bitcoin, Ethereum, etc. <br/>Units should be written as full currency name abbreviations (e.g. USD, not $).</p>
-        <a href="https://www.exchangeratesapi.io">Data provided by Exchange Rates API.</a>
-        <p>Also no warranty. It <em>should</em> be correct, but it might not be.</p>
-    
-<br/>
-
-
-    
-
-</body>
+        <div style="height:6em"> </div>     
+        <!--Length-->
+        <h1 id="length">Length</h1>
+        <h4>Accepted Units and Symbols</h2>
+            <script>
+                var rows = [row("Name", "Symbol"), row("Yoctometer", "ym"), row("Zeptometer", "zm"), row("Attometer", "am"), row("Femtometer", "fm"), row("Picometer", "pm"), row("Angstrom", "a"), row("Nanometer", "nm"), row("Micrometer", "um"), row("Millimeter", "mm"), row("Centimeter", "cm"), row("Decimeter", "dm"), row("Meter", "m"), row("Dekameter", "dam"), row("Hectometer", "hm"), row("Kilometer", "km"), row("Megameter", "mmm"), row("Gigameter", "gm"), row("Terameter", "tm"), row("Petameter", "ppm"), row("Exameter", "em"), row("Zettameter", "zzm"), row("Yottameter", "yym"), row("Cable", "cb"), row("Parsec", "pc"), row("Astronomical Unit", "au"), row("Lightsecond", "ls"), row("Lightminute", "lm"), row("Lighthour", "lh"), row("Lightday", "ld"), row("Lightyear", "ly"), row("Inch", "in"), row("Microinch", "min"), row("Hand", "h"), row("Foot", "ft"), row("Furlong", "fur"), row("Mile", "mi"), row("Rod", "rd"), row("Chain", "ch"), row("Fathom", "ftm"), row("Yard", "yd"), row("Nautical Mile (int.)", "nau"), row("Nautical Mile (US)", "usnau"), row("cubit", "c")];
+                table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
+            </script>
+        <div style="height:6em"> </div>     
+        <!--Weight-->
+        <h1 id="weight">Mass/Weight</h1>
+        <h4>Accepted Units and Symbols</h2>
+            <script>
+                var rows = [row("Name", "Symbol"), row("Yoctogram", "yg"), row("Zeptogram", "zg"), row("Attogram", "ag"), row("Femtogram", "fg"), row("Picogram", "pg"), row("Nanogram", "ng"), row("Microgram", "ug"), row("Milligram", "mg"), row("Centigram", "cg"),row("Decigram", "dg"), row("Carat", "ct"), row("Gram", "g"), row("Grain", "gr"), row("Dekagram", "dag"), row("Hectogram", "hg"), row("Kilogram", "kg"), row("Megagram / Metric ton", "mmg / mt"), row("Gigagram", "gg"), row("Teragram", "tg"), row("Petagram", "ppg"), row("Exagram", "eg"), row("Zettagram", "zzg"), row("Yottagram", "yyg"), row("Dram", ""), row("Ounce", "oz"), row("Pound", "lb"), row("Ounce troy", "ozt"), row("Pound troy","lbt"), row("Pound Metric", "lbm"), row("Stone", "st"), row("Ton (US or 'Short')", "t / ton"), row("Ton(Imperial or 'Long')", "it / iton")   ];
+                table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
+            </script>
+        <div style="height:6em"> </div>
+        <!--Time-->     
+        <h1 id="time">Time</h1>
+        <h4>Accepted Units and Symbols</h2>
+            <script>
+                var rows = [row("Name", "Symbol"), row("Attosecond", "as"), row("Femtosecond", "fs"), row("Picosecond", "ps"), row("Nanosecond", "ns"), row("Microsecond", "us"), row("Millisecond", "ms"), row("Second", "s"), row("Shake", ""), row("Minute", "m"), row("Hour", "h"), row("Day", "d"), row("Week", "w"), row("Month", "mo"), row("Year", "y"), row("Decade", ""), row("Century", "c"), row("Millenia","")];
+                table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
+            </script>
+        <p>Where week is defined as 7 days, and month is defined as 30 days. A year is a calendar year ( 365 days ) </p>
+        <div style="height:6em"> </div>     
+        <!--Temp-->
+        <h1 id="temp">Temperature</h1>
+        <h4>Accepted Units and Symbols</h2>
+            <script>
+                var rows = [row("Name", "Symbol"), row("Fahrenheit", "F"), row("Rankine", "R"), row("Celsius / Centigrade", "C"), row("Kelvin", "K")];
+                table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
+            </script>
+        <div style="height:6em"> </div>     
+        <!--Money-->
+        <h1 id="money">Money</h1>
+        <h4>Accepted Units and Symbols</h2>
+            <p>Every real-world currency, excluding currencies such as Bitcoin, Ethereum, etc. <br/>Units should be written as full currency name abbreviations (e.g. USD, not $).</p>
+            <a href="https://www.exchangeratesapi.io">Data provided by Exchange Rates API.</a>
+            <p>Also no warranty. It <em>should</em> be correct, but it might not be.</p>
+    </body>
 </html>
