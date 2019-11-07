@@ -3,7 +3,6 @@
     <head>
         <title>iab Command Reference - convert</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="Sliders.js"></script>
         <script src="convert.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link href="basic.css" rel="stylesheet">
@@ -24,38 +23,51 @@
         <code>4.83570327845852E+15 gb</code>
         <div style="height:6em"> </div>     
 
+        <p id="Metric">Any submodule that mentions it has metric prefixes means all of the following are accepted:</p>
+        <p>Yocto (y), Zepto (z), Atto (a), Femto (f), Pico (p), Nano (n), Micro (u), Milli (m), Centi (c), Deci (d), Deka (da), Hecto (h), Kilo (k), Mega (mm), Giga (g), Tera (t), Peta (pp), Exa (e), Zetta (zz), Yotta (yy)</p>
+        
         <h1 id="submodules">Submodules:</h1>
         <a href="#length"><p>length</p></a>    
         <a href="#weight"><p>mass / weight</p></a>
-        <a href="#storage"><p>storage </p></a>
+        <a href="#computerStorage"><p>storage </p></a>
         <a href="#time"><p>time</p></a>
         <a href="#temp"><p>temperature</p></a>
-        <a href="#temp"><p>money</p></a>
+        <a href="#money"><p>money</p></a>
         <div style="height:6em"> </div>     
         
         <!--Length-->
         <h1 id="length">Length</h1>
-        <h4>Accepted Units and Symbols</h2>
+        <h4>Accepted Units and Symbols</h4>
+        <p> This table includes the above-mentioned <a href="#Metric">Metric prefixes</a></p>
             <script>
-                var rows = [row("Name", "Symbol"), row("Yoctometer", "ym"), row("Zeptometer", "zm"), row("Attometer", "am"), row("Femtometer", "fm"), row("Picometer", "pm"), row("Angstrom", "a"), row("Nanometer", "nm"), row("Micrometer", "um"), row("Millimeter", "mm"), row("Centimeter", "cm"), row("Decimeter", "dm"), row("Meter", "m"), row("Dekameter", "dam"), row("Hectometer", "hm"), row("Kilometer", "km"), row("Megameter", "mmm"), row("Gigameter", "gm"), row("Terameter", "tm"), row("Petameter", "ppm"), row("Exameter", "em"), row("Zettameter", "zzm"), row("Yottameter", "yym"), row("Cable", "cb"), row("Parsec", "pc"), row("Astronomical Unit", "au"), row("Lightsecond", "ls"), row("Lightminute", "lm"), row("Lighthour", "lh"), row("Lightday", "ld"), row("Lightyear", "ly"), row("Inch", "in"), row("Microinch", "min"), row("Hand", "h"), row("Foot", "ft"), row("Furlong", "fur"), row("Mile", "mi"), row("Rod", "rd"), row("Chain", "ch"), row("Fathom", "ftm"), row("Yard", "yd"), row("Nautical Mile (int.)", "nau"), row("Nautical Mile (US)", "usnau"), row("cubit", "c")];
+                var rows = [row("Name", "Symbol"),row("Angstrom", "a"), row("Cable", "cb"), row("Parsec", "pc"), row("Astronomical Unit", "au"), row("Lightsecond", "ls"), row("Lightminute", "lm"), row("Lighthour", "lh"), row("Lightday", "ld"), row("Lightyear", "ly"), row("Inch", "in"), row("Microinch", "min"), row("Hand", "h"), row("Foot", "ft"), row("Furlong", "fur"), row("Mile", "mi"), row("Rod", "rd"), row("Chain", "ch"), row("Fathom", "ftm"), row("Yard", "yd"), row("Nautical Mile (int.)", "nau"), row("Nautical Mile (US)", "usnau"), row("cubit", "c")];
                 table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
             </script>
         <div style="height:6em"> </div>    
 
         <!--Weight-->
         <h1 id="weight">Mass/Weight</h1>
-        <h4>Accepted Units and Symbols</h2>
+        <h4>Accepted Units and Symbols</h4>
+        <p> This table includes the above-mentioned <a href="#Metric">Metric prefixes</a></p>
             <script>
-                var rows = [row("Name", "Symbol"), row("Yoctogram", "yg"), row("Zeptogram", "zg"), row("Attogram", "ag"), row("Femtogram", "fg"), row("Picogram", "pg"), row("Nanogram", "ng"), row("Microgram", "ug"), row("Milligram", "mg"), row("Centigram", "cg"),row("Decigram", "dg"), row("Carat", "ct"), row("Gram", "g"), row("Grain", "gr"), row("Dekagram", "dag"), row("Hectogram", "hg"), row("Kilogram", "kg"), row("Megagram / Metric ton", "mmg / mt"), row("Gigagram", "gg"), row("Teragram", "tg"), row("Petagram", "ppg"), row("Exagram", "eg"), row("Zettagram", "zzg"), row("Yottagram", "yyg"), row("Dram", ""), row("Ounce", "oz"), row("Pound", "lb"), row("Ounce troy", "ozt"), row("Pound troy","lbt"), row("Pound Metric", "lbm"), row("Stone", "st"), row("Ton (US or 'Short')", "t / ton"), row("Ton(Imperial or 'Long')", "it / iton")   ];
+                var rows = [row("Name", "Symbol"), row("Carat", "ct"), row("Gram", "g"), row("Grain", "gr"), row("Dram", ""), row("Ounce", "oz"), row("Pound", "lb"), row("Ounce troy", "ozt"), row("Pound troy","lbt"), row("Pound Metric", "lbm"), row("Stone", "st"), row("Ton (US or 'Short')", "t / ton"), row("Ton(Imperial or 'Long')", "it / iton")   ];
                 table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
             </script>
         <div style="height:6em"> </div>
 
+        <!--Computer Storage-->
+        <h1 id="computerStorage">Computer Storage</h1>
+        <h4>Accepted Units and Symbols</h4>
+        <p>I don't want to write another big table so I'll give a list of prefixes and suffixes.</p>
+        <p>Prefixes: <a href="#Metric">Metric Prefixes</a>: k m g t p e z y</p>
+        <p>Suffixes: b (byte), bit (guess), ib (ibyte (binary-based, e.g. 1024 bytes in a kibibyte.)), ibibit (binary-based bit representation)</p>
+        <p>Supplementary Units: bit, nibble, page, block, paragraph, short, long, longlong, word, dword, qword;</p>
         <!--Time-->     
         <h1 id="time">Time</h1>
-        <h4>Accepted Units and Symbols</h2>
+        <h4>Accepted Units and Symbols</h4>
+            <p> This table accepts some of the <a href="#Metric">Metric Prefixes</a> listed above: a, f, p, n, u, m.</p>
             <script>
-                var rows = [row("Name", "Symbol"), row("Attosecond", "as"), row("Femtosecond", "fs"), row("Picosecond", "ps"), row("Nanosecond", "ns"), row("Microsecond", "us"), row("Millisecond", "ms"), row("Second", "s"), row("Shake", ""), row("Minute", "m"), row("Hour", "h"), row("Day", "d"), row("Week", "w"), row("Month", "mo"), row("Year", "y"), row("Decade", ""), row("Century", "c"), row("Millenia","")];
+                var rows = [row("Name", "Symbol"), row("Second", "s"), row("Shake", ""), row("Minute", "m"), row("Hour", "h"), row("Day", "d"), row("Week", "w"), row("Month", "mo"), row("Year", "y"), row("Decade", ""), row("Century", "c"), row("Millenia","")];
                 table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
             </script>
         <p>Where week is defined as 7 days, and month is defined as 30 days. A year is a calendar year ( 365 days ) </p>
@@ -63,7 +75,7 @@
 
         <!--Temp-->
         <h1 id="temp">Temperature</h1>
-        <h4>Accepted Units and Symbols</h2>
+        <h4>Accepted Units and Symbols</h4>
             <script>
                 var rows = [row("Name", "Symbol"), row("Fahrenheit", "F"), row("Rankine", "R"), row("Celsius / Centigrade", "C"), row("Kelvin", "K")];
                 table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
@@ -73,7 +85,8 @@
         <!--Money-->
         <h1 id="money">Money</h1>
         <h4>Accepted Units and Symbols</h2>
-            <p>Every real-world currency, excluding currencies such as Bitcoin, Ethereum, etc. <br/>Units should be written as full currency name abbreviations (e.g. USD, not $).</p>
+            <p>Every real-world currency, excluding currencies such as Bitcoin, Ethereum, etc. <br/>
+            Units should be written as full currency name abbreviations (e.g. USD, not $).</p>
             <a href="https://www.exchangeratesapi.io">Data provided by Exchange Rates API.</a>
             <p>Also no warranty. It <em>should</em> be correct, but it might not be.</p>
     </body>
