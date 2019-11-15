@@ -165,6 +165,7 @@ function PopulatePanel() {
     NewButton("iab!plus", true, "iab!plus", false, "The eventual premium tier of iab. It's currently not implemented (since the Patreon isn't live), but you can still read about it.", ["None."]);
     NewButton("iab!prohibit", true, "iab!prohibit % P", true, "Stops a user from using a certain command.", ["%: The user to deny. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
     NewButton("iab!prohibitions", true, "iab!prohibitions", true, "Returns a text file that details all the prohibitions in a server.", ["None."]);
+    NewButton("iab!random", true, "iab!random [Unordered Parameters]", false, "iab will generate a random number", ["-low: The low bound of the random number.", "-high: The high bound of the random number."]);
     NewButton("iab!remind", true, "iab!remind # T", false, "iab will remind you about something (This is currently lost if iab is restarted.)", ["#: The number of seconds to wait before sending the reminder.", "T: The message to send."]);
     Button("iab!rex", "\
         ExpandSubcommandsPanel();\
