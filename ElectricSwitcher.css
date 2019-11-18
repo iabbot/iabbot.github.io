@@ -34,13 +34,15 @@
 .cmdButton {
     font-family:'Exo 2';
     cursor: pointer;
-    width:100%;
+    width:calc(100% - 10px);
+    
     height:auto;
     background-color: #76f7bf;
     border:none;
     color:black;    
     display:inline-block;
     text-align:center;
+    margin-right:10px;
     text-decoration:none;
 }
 .cmdButton:hover {

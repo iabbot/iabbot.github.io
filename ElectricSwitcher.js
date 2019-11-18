@@ -15,17 +15,18 @@ function SetParameters(arrayParams) {
     params.attr("style", "width:100%;height:" + String(ParamsHeight) + "%;display:inline-block");
 }
 function CollapseSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "width:0%;border-radius:25px;");
-    $("#panel").attr("style", "width:75%;float:right;margin-right:5%");
+    $("#SubcommandSelector").attr("style", "width:0%;border-radius:25px;overflow-x:hidden;line-height:98%;");
+    $("#panel").attr("style", "width:74%;float:right;margin-right:5%");
 }
 function ExpandSubcommandsPanel() {
-    $("#SubcommandSelector").attr("style", "width:" + SubcommandsSelectorWidth + "%;border-radius:25px;");
-    $("#panel").attr("style", "width:" + (75 - SubcommandsSelectorWidth) + "%;float:right;margin-right:5%");
+    $("#SubcommandSelector").attr("style", "width:" + SubcommandsSelectorWidth + "%;border-radius:25px;overflow-x:hidden;line-height:98%;");
+    $("#panel").attr("style", "width:" + (74 - SubcommandsSelectorWidth) + "%;float:right;margin-right:5%");
 }
 function ClearSubcommands() {
     $("#SubcommandSelector").empty();
     var par = $("<p>");
     par.text("Subcommands");
+    par.attr("style","font-size:75%;margin-top:6px;margin-bottom:0px;padding-bottom:1px;font-weight:bold");
     $("#SubcommandSelector").append(par);
 }
 function SetDescription(text) {
