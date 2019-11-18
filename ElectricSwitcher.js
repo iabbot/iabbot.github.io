@@ -24,9 +24,9 @@ function ExpandSubcommandsPanel() {
 }
 function ClearSubcommands() {
     $("#SubcommandSelector").empty();
-    var par = $("<p>");
+    var par = $("<h4>");
     par.text("Subcommands");
-    par.attr("style","font-size:75%;margin-top:6px;margin-bottom:0px;padding-bottom:1px;font-weight:bold");
+    par.attr("style","line-height:30%;font-size:75%;margin-top:16px;margin-bottom:8px;font-weight:bold");
     $("#SubcommandSelector").append(par);
 }
 function SetDescription(text) {
