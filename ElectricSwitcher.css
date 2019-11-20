@@ -8,6 +8,8 @@
     --iabd_dark:#7d7d1c;
     --iabd_light:#f0f0A5;
     --iabd_hover:#AB9D05;
+    
+    --button_animation_duration: 0.2s;
 }
 #PanelParent {
     border:2px solid var(--iab_dark);
@@ -57,26 +59,26 @@
 }
 .cmdButton:hover {
     animation-name: animateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color:var(--iab_hover);
     color:white;
 }
 .cmdButton:not(:hover) {
     animation-name: unanimateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color: var(--iab_light);
     color:black;
 }
 .hotButton:hover {
     animation-name: animateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color: var(--iab_hover);
     color:white;
 }
 
 .hotButton:not(:hover) {
     animation-name: unanimateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color: var(--iab_light);
     color:black;
 }
@@ -114,26 +116,26 @@
 }
 .DcmdButton:hover {
     animation-name: DanimateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color:var(--iabd_hover);
     color:white;
 }
 .DcmdButton:not(:hover) {
     animation-name: DunanimateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color: var(--iabd_light);
     color:black;
 }
 .DhotButton:hover {
     animation-name: DanimateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color: var(--iabd_hover);
     color:white;
 }
 
 .DhotButton:not(:hover) {
     animation-name: DunanimateButton;
-    animation-duration: 0.2s;
+    animation-duration: var(--button_animation_duration);
     background-color: var(--iabd_light);
     color:black;
 }
