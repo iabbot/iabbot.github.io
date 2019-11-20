@@ -1,11 +1,22 @@
+:root {
+    --iab_dark:#1c7c54;
+    --iab_gunmetal:#2c2F33;
+    --iab_gunmetal_half:#2c2F3377;
+    --iab_light:#76f7bf;
+    --iab_hover:#3CAC94;
+    
+    --iabd_dark:#7d7d1c;
+    --iabd_light:#f0f075;
+    --iabd_hover:#AB9D05;
+}
 #PanelParent {
-    border:2px solid #1c7c54;
+    border:2px solid var(--iab_dark);
     border-radius: 25px;
 }
 .commandScroll {
     overflow-y:auto;
     height:100%;
-    background-color:#2c2f3377;
+    background-color: var(--iab_gunmetal_half);
     float:left;
     text-align:center;
 }
@@ -26,18 +37,17 @@
     cursor: pointer;
     width:33.3333%;
     height:100%;
-    background-color:#76F7BF;
+    background-color:var(--iab_light);
     border-radius: 2vw; 
-    border: .25vw solid;
-    border-color:#2C2F33;
+    border: 3px solid;
+    border-color:var(--iab_dark);
 }
 .cmdButton {
     font-family:'Exo 2';
     cursor: pointer;
     width:calc(100% - 10px);
-    
     height:auto;
-    background-color: #76f7bf;
+    background-color: var(--iab_light);
     border:none;
     color:black;    
     display:inline-block;
@@ -48,33 +58,90 @@
 .cmdButton:hover {
     animation-name: animateButton;
     animation-duration: 0.2s;
-    background-color:#3cAc94;
+    background-color:var(--iab_hover);
     color:white;
 }
 .cmdButton:not(:hover) {
     animation-name: unanimateButton;
     animation-duration: 0.2s;
-    background-color: #76f7bf;
+    background-color: var(--iab_light);
     color:black;
 }
 .hotButton:hover {
     animation-name: animateButton;
     animation-duration: 0.2s;
-    background-color:#3cAc94;
+    background-color: var(--iab_hover);
     color:white;
 }
 
 .hotButton:not(:hover) {
     animation-name: unanimateButton;
     animation-duration: 0.2s;
-    background-color: #76f7bf;
+    background-color: var(--iab_light);
     color:black;
 }
 @keyframes animateButton {
-    from { background-color: #76f7bf; color:black;}
-    to { background-color: #3cAc94; color:white;}
+    from { background-color: var(--iab_light); color:black;}
+    to { background-color: var(--iab_hover); color:white;}
 }
 @keyframes unanimateButton {
-    from { background-color: #3cAc94;color:white;}
-    to { background-color: #76f7bf;color:black;}
+    from { background-color: var(--iab_hover);color:white;}
+    to { background-color: var(--iab_light);color:black;}
+}
+.DhotButton {
+    font-family:'Exo 2';
+    cursor: pointer;
+    width:33.3333%;
+    height:100%;
+    background-color:var(--iabd_light);
+    border-radius: 2vw; 
+    border: 3px solid;
+    border-color:var(--iabd_hover);
+}
+.DcmdButton {
+    font-family:'Exo 2';
+    cursor: pointer;
+    width:calc(100% - 10px);
+    
+    height:auto;
+    background-color: var(--iabd_light);
+    border:none;
+    color:black;    
+    display:inline-block;
+    text-align:center;
+    margin-right:10px;
+    text-decoration:none;
+}
+.DcmdButton:hover {
+    animation-name: DanimateButton;
+    animation-duration: 0.2s;
+    background-color:var(--iabd_hover);
+    color:white;
+}
+.DcmdButton:not(:hover) {
+    animation-name: DunanimateButton;
+    animation-duration: 0.2s;
+    background-color: var(--iabd_light);
+    color:black;
+}
+.DhotButton:hover {
+    animation-name: DanimateButton;
+    animation-duration: 0.2s;
+    background-color: var(--iabd_hover);
+    color:white;
+}
+
+.DhotButton:not(:hover) {
+    animation-name: DunanimateButton;
+    animation-duration: 0.2s;
+    background-color: var(--iabd_light);
+    color:black;
+}
+@keyframes DanimateButton {
+    from { background-color: var(--iabd_light); color:black;}
+    to { background-color: var(--iabd_hover); color:white;}
+}
+@keyframes DunanimateButton {
+    from { background-color: var(--iabd_hover);color:white;}
+    to { background-color: var(--iabd_light);color:black;}
 }
