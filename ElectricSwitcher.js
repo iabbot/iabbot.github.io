@@ -8,7 +8,7 @@ function SetParameters(arrayParams) {
     var ParamsHeight = 0;
     arrayParams.forEach(function (item, index) {
         var pars = $("<p>");
-        pars.text(item);
+        pars.html(item);
         params.append(pars);
         ParamsHeight += 5;
     });
@@ -73,6 +73,12 @@ function SButton(name, func) {
     butt.addClass("cmdButton");
     butt.attr("onclick", func);
     $("#SubcommandSelector").append(butt);
+}
+function ClearPanel() {
+    ClearSubcommands();
+    SetSyntax('',false);
+    SetDescription('');
+    SetParameters(['']);
 }
 function NewButton(txt, col, syn, adm, des, pars) {
     var func = "";
@@ -141,17 +147,16 @@ function PopulatePanel() {
     NewButton("iab!die", true, "iab!die #", true, "Deletes iab's messages.", ["#: The number of messages to process."]);
     NewButton("iab!mur", true, "iab!mur % #", true, "Deletes another user's messages.", ["%: The user to target.", "#: The number of messages to process."]);
     NewButton("iab!sui", true, "iab!sui #", false, "Deletes your own messages.", ["#: The number of messages to process."]);
-    NewButton("iab!edge", true, "iab!edge {unorderedParameters}", false, "Generates an edgemap. If no options are specified, these values are used: Bias 0, Color FFFFFF, Multiplier 1, Search-Radius 1, Tolerance 30, AlphaMode 1. If no image is specified, iab will search up to 32 messages above the calling message to find an applicable image. Alpha Modes: 0 means that pixels defined as edges have 255 alpha, and other pixels have 0 alpha. 1 uses the image's old alpha value, and 2 uses the contrast of the pixels to determine the alpha.", ["Image: The image to create an edgemap from. Can be linked, attached, or contextual (messages above)", "-bias #: Add or subtract this amount from the final alpha amounts.", "-color hex#: The color of the edgemap.", "-hue: Uses the color of the image instead of the color specified, if any.", "-multiplier #: Multiply the alpha value by this number (before bias)", "-radius #: Use this radius to search for edges.", "-tolerance #: The amount a channel must differ to be considered an edge.", "-alphamode #: The mode of alpha calculation to use. See the description."]);
+    NewButton("iab!edge", true, "iab!edge {unorderedParameters}", false, "Generates an edgemap. If no options are specified, these values are used: Bias 0, Color FFFFFF, Multiplier 1, Search-Radius 1, Tolerance 30, AlphaMode 1. If no image is specified, iab will search up to 32 messages above the calling message to find an applicable image. Alpha Modes: 0 means that pixels defined as edges have 255 alpha, and other pixels have 0 alpha. 1 uses the image's old alpha value, and 2 uses the contrast of the pixels to determine the alpha.", ["Image: The image to create an edgemap from. Can be linked, attached, or <a href=\\\"Docs/contextual_image_search.html\\\">contextual</a>.", "-bias #: Adds or subtracts from the alpha channel.", "-color hex#: The color of the edgemap.", "-hue: Color the edges with the existing color data", "-multiplier #: Multiply the alpha value by this number (before bias)", "-radius #: Use this radius to search for edges.", "-tolerance #: The amount a channel must differ to be considered an edge.", "-alphamode #: The mode of alpha calculation to use."]);
     NewButton("iab!edgy", true, "iab!edgy B T F", false, "Attempts to soften a poorly cut png. All parameters are optional (except image lol)", ["B: Lowers the alpha of selected pixels by this amount.", "The amount the alpha channel must differ from the extremes to be selected (so 16 would be alpha values 16 - 239).", "F: The range, in pixels, to feather the alpha values."]);
     NewButton("iab!gencol", true, "iab!gencol R G B (or iab!generatecolor R G B)", false, "Generates a small image of a specified color. I'm not writing the parameters because they're obvious. Fight me.", ["arr gee bee"]);
     NewButton("iab!getannouncements", true, "iab!getannouncements true/false", true, "Updates your guild's preference to recieve announcements", ["true / false"]);
     NewButton("iab!gensslink", true, "iab!gensslink", false, "Generates a link that users can click to share screens.", ["None"]);
+    FButton  ("iab!hyper", "hyper.html");
     NewButton("iab!inactives", true, "iab!inactives D T", true, "Gives a list of users that haven't sent messages recently.", ["D: The amount of days in the past to consider 'recent'.", "T: The number of messages to go through (Max 2000)"]);
     Button   ("iab!info", "\
         ExpandSubcommandsPanel();\
-        ClearSubcommands();\
-        SetSyntax('',false);\
-        SetDescription('');\
+        ClearPanel();\
         NewSButton('Emote', 'iab!info emote [-ec]', false, 'Sends info about emotes. If -ec is specified, iab will make the output smaller.', ['None']);\
         NewSButton('Invite', 'iab!info invite [-ic]', false, 'Sends info about invites. If -ic is specified, iab will use shorter field names.', ['None']);\
         NewSButton('Guild', 'iab!info guild', false, 'Sends general information about the server.', ['None']);\
@@ -163,6 +168,7 @@ function PopulatePanel() {
     NewButton("iab!nut", true, "iab!nut", false, "Nut.", ["Nut."]);
     NewButton("iab!permissions", true, "iab!permissions %", false, "Sends a flashy image containing a user's permissions. A red name means that the user has Change Nickname.", ["%: The user to examine."]);
     NewButton("iab!ping", true, "iab!ping", false, "Ping iab. iab does not like it when you ping it, but you still can.", ["None."]);
+    NewButton("iab!phone", true, "iab!phone", false, "Starts or stops a connection to another server who's also running iab!phone.", ["None."]);
     NewButton("iab!planned", true, "iab!planned", false, "See what I am plotting <a href='planned.html'>here.</a>", ["None."]);
     NewButton("iab!plus", true, "iab!plus", false, "The eventual premium tier of iab. It's currently not implemented (since the Patreon isn't live), but you can still read about it.", ["None."]);
     NewButton("iab!prohibit", true, "iab!prohibit % P", true, "Stops a user from using a certain command.", ["%: The user to deny. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
@@ -171,10 +177,7 @@ function PopulatePanel() {
     NewButton("iab!remind", true, "iab!remind # T", false, "iab will remind you about something (This is currently lost if iab is restarted.)", ["#: The number of seconds to wait before sending the reminder.", "T: The message to send."]);
     Button("iab!rex", "\
         ExpandSubcommandsPanel();\
-        ClearSubcommands();\
-        SetSyntax('',false);\
-        SetDescription('');\
-        SetParameters(['']);\
+        ClearPanel();\
         SetDescription('Runtime extensions are a way to add commands to iab while it is running. Runtime extensions can be used by using the prefix rex! instead of iab!. Whoever made the runtime extension must also be in the server for it to work.');\
         NewSButton('Create', 'iab!rex create T R', false, 'Create a new runtime extension.', ['T: The trigger for the function', 'R: The response for the function']);\
         NewSButton('Delete', 'iab!rex delete T', false, 'Deletes a runtime extension.', ['T: The trigger for the function']);\
@@ -183,10 +186,7 @@ function PopulatePanel() {
     //Role
     Button("iab!role", "\
         ExpandSubcommandsPanel();\
-        ClearSubcommands();\
-        SetSyntax('',false);\
-        SetDescription('');\
-        SetParameters(['']);\
+        ClearPanel();\
         NewSButton('Assign', 'iab!role assign % $', true, 'Assigns a role to a user.', ['%: The user to target.', '$: The role to assign']);\
         NewSButton('Assignall', 'iab!role assignall $', true, 'Assigns a role to every user.', ['$: The role to assign']);\
         NewSButton('Unassign', 'iab!role unassign % $', true, 'Unassigns a role to a user.', ['%: The user to target.', '$: The role to unassign']);\
@@ -200,24 +200,19 @@ function PopulatePanel() {
     //Spintext
     Button("iab!spintext", "\
         ExpandSubcommandsPanel();\
-        ClearSubcommands();\
-        SetSyntax('',false);\
-        SetDescription('');\
-        SetParameters(['']);\
+        ClearPanel();\
         NewSButton('Create', 'iab!spintext create # T I', false, 'Creates a new spintext', ['#: The amount to zoom the camera (Optional, 0.66)', 'T: The text to create', 'I: Optional image attachment as texture']);\
         NewSButton('Delete', 'iab!spintext delete #', false, 'Deletes a spintext', ['#: The ID of the spintext (given by create)']);\
         NewSButton('Deleteall', 'iab!spintext deleteall', false, 'Deletes all of your spintexts', ['None.']);\
         NewSButton('Busy', 'iab!spintext busy', false, 'Returns whether or not blender is busy or disabled.', ['None.']);\
         NewSButton('Recall', 'iab!spintext recall #', false, 'Resends a spintext.', ['#: The ID of the spintext (given by create)']);");
+    FButton("iab!standardrules", "standardrules.html");
     NewButton("iab!suggest", true, "iab!suggest S", false, "Writes a suggestion that persists if the bot restarts.", ["S: the suggestion."]);
     NewButton("iab!todec", true, "iab!todec H#", false, "Parses a hex number to decimal..", ["H#: The number (in hex, no prefix) to convert."]);
     //Vye
     Button("iab!vye", "\
         ExpandSubcommandsPanel();\
-        ClearSubcommands();\
-        SetSyntax('',false);\
-        SetDescription('');\
-        SetParameters(['']);\
+        ClearPanel();\
         NewSButton('Accept', 'iab!vye accept', true, 'Sends an invite back to the bot dev. (For troubleshooting, etc.)', ['None.']);\
         NewSButton('Deny', 'iab!vye deny M', true, 'Denies an invite back to the bot dev, with an optional message.', ['M: A message to write to the console.']);");
             

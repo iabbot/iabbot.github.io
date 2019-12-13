@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>iab Command Reference - convert</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="convert.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="basic.css" rel="stylesheet">
+    </head>
+
+    <body class="mainbody">
+        <h1>iab!standardrules</h1>
+        <a href="index.html">Back to Index</a>
+        <p class="iabCommandSyntax">iab!standardrules (switches)</p>
+        <p>Standardrules aims to allow server owners to quickly generate a list of rules, based off of the rules of many of the Discord servers I was in. Of course, you can always just add to your rules with another message.</p>
+        <h1>Rules</h1>
+        <script>
+           var rows = [row("Rule Text", "Disable Switch"), row("Follow the Discord Terms of Service", "-discordtos"), row("Do not spam.", "-allowspam"), row("Do not micspam (earrape)", "-allowmicspam"), row("Do not post earrape in the text chats", "-allowearrapeposts"), row("Keep NSFW content to NSFW channels", "-allownsfw"), row("Do not advertise (either in the server or DMs)", "-allowads"), row("Only chat in English", "-allowmultilanguage"), row("Respect your fellow members.", "-allowmean")];
+           table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
+        </script>
+        <noscript>
+        This page won't display without JavaScript.
+        </noscript>
+    </body>
+</html>
