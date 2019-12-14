@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iab Command Reference - convert</title>
+        <link href="https://fonts.googleapis.com/css?family=Exo%202&display=swap" rel="stylesheet">
+        <link href="basic.css" rel="stylesheet">
+    </head>
+    <body class="mainbody am" style="width:90%">
+        <h1 class="lightcolor">iab!convert</h1>
+        <a href="index.html">Back to Index</a>
+        <p class="iabCommandSyntax">iab!filter -type (FilterID) (Parameters)</p>
+        <p>FilterID: see <a href="#filters">Filters</a>.</p>
+        <h1 id="filters" class="lightcolor">Filters:</h1>
+        <a href="#Filter0">
+            <p>(ID 0) Edgemap</p>
+        </a>
+        <a href="#Filter1">
+            <p>(ID 1) Fry</p>
+        </a>
+        <a href="#Filter2">
+            <p>(ID 2) Desaturate</p>
+        </a>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h1 id = "Filter0" class="lightcolor">Edgemap</h1>
+        <p>Highlights the edges on an image</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Edgemap</li>
+            <li>Edge</li>
+            <li>0</li>
+        </ul>
+        <p>Parameters:
+        <ul>
+            <li>
+                <h2>-hue</h2>
+                <p>Use the image's original colors</p>
+            </li>
+            <li>
+                <h2>-radius #</h2>
+                <p>(Default 1) The number of pixels to search to consider a pixel an 'edge'. Typically makes lines thicker.</p>
+            </li>
+            <li>
+                <h2>-tolerance #</h2>
+                <p>(Default 30) Defines how much a pixel's channels must change for it to be considered an edge.</p>
+            </li>
+            <li>
+                <h2>-alphamode #</h2>
+                <p>(Default 1) Defines how to treat the alpha channel of the image. 
+                <ol start=0>
+                    <li>If the pixel is not an edge, its alpha is 0. Otherwise, it's 100.</li>
+                    <li>The pixel's alpha value is the same as the old image's.</li>
+                    <li>The pixel's alpha value is recalculated to be the difference between pixels. Often, you'll need to use -multiplier # to make it visible.</li>
+                </ol>
+            </li>
+            <li>
+                <h2>-multiplier #</h2>
+                <p>(Default 1) Multiplies the alpha channel by this amount. This number can have a decimal.</p>
+            <li>
+                <h2>-bias #</h2>
+                <p>(Default 0) Adds or subtracts (if the value is negative) this number from the alpha channel. This is processed AFTER multiplication, and if the alpha value is 0, nothing will be added.</p>
+            </li>
+            <li>
+                <h2>-color #</h2>
+                <p>(Default FFFFFF) A six-digit hex number (without the hex specifier) that defines the color of the edgemap (if -hue isn't specified), in RGB format. For example, FF0000 is red.</p>
+            </li>
+        </ul>
+        <br/>
+        <br/>
+        <h1 id="Filter1" class="lightcolor">Fry</h1>
+        <p>Distorts an image's colors by multiplying channel values' offsets from 128 by a given number.</p>
+        <p>Possible IDs</p>
+        <ul>
+            <li>Fry</li>
+            <li>1</li>
+        </ul>
+        <p>Parameters</p>
+        <ul>
+            <li>
+                <h2>-i #</h2>
+                <p>(Default 5) The factor to multiply the channels by. Higher numbers do not necessarily mean more distortion (diminishing returns)</p>
+            </li>
+        </ul>
+        <br/>
+        <br/>
+        <h1 id="Filter2" class="lightcolor">Desaturate</h1>
+        <p>Removes color from an image.</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Desaturate</li>
+            <li>Gray</li>
+            <li>2</li>
+        </ul>
+        <p>No parameters</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </body>
+</html>
