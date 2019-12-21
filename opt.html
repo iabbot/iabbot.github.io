@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+ <html>  
+    <head>
+        <title>iab Command Reference - opt</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="convert.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="basic.css" rel="stylesheet">
+    </head>
+
+    <body class="mainbody">
+        <h1>iab!opt</h1>
+        <a href="index.html">Back to Index</a>
+        <p class="iabCommandSyntax">iab!opt name<p>
+        <p>Opt aims to tell users about optional notifications.</p>
+        <h1>Rules</h1>
+        <script>
+           var rows = [row("name", "description"), row("egl", "Notifies every time that the Epic Games Launcher has new free games (weekly)"), row("chronogg", "Will notify each time there's a new chrono.gg sale (daily)")];
+           table("border: 3px solid black;border-collapse:collapse;", "border-bottom: solid 1px black;padding-left: 16px", ";", rows);
+        </script>
+        <noscript>
+        This page won't display without JavaScript.
+        </noscript>
+    </body>
+</html>

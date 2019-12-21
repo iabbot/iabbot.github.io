@@ -20,6 +20,9 @@
         <a href="#Filter2">
             <p>(ID 2) Desaturate</p>
         </a>
+        <a href="#Filter3">
+            <p>(ID 3) Primarize</p>
+        </a>
         <br/>
         <br/>
         <br/>
@@ -96,6 +99,91 @@
         <p>No parameters</p>
         <br/>
         <br/>
+        <h1 id="Filter3" class="lightcolor">Primarize</h1>
+        <p>Changes the color of a pixel to its highest channel. (Does nothing if two or more channels are the same).</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Primarize</li>
+            <li>3</li>
+        </ul>
+        <p>No parameters</p>
+        <br/>
+        <br/>
+        <h1 id="Filter4" class="lightcolor">Fry (Previous version where Red and Blue channels were switched)</h1>
+        <p>Literally identical to fry, but it reverses the red and blue channels.</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>FryReverseRB</li>
+            <li>4</li>
+        </ul>
+        <p>Parameters</p>
+        <ul>
+            <li>
+                <h2>-i #</h2>
+                <p>(Default 5) The factor to multiply the channels by. Higher numbers do not necessarily mean more distortion (diminishing returns)</p>
+            </li>
+        </ul>
+        <br/>
+        <br/>
+        <h1 id="Filter5" class="lightcolor">Square<h1>
+        <p>Squares the value of each pixel's channel (excluding alpha ;3)</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Square</li>
+            <li>5</li>
+        </ul>
+        <p>No parameters</p>
+        <br/>
+        <br/>
+        <h1 id="Filter6" class="lightcolor">Tint<h1>
+        <p>Finds each pixel's lightness (R+G+B / 3) and then sets each channel to its supplied value * the lightness percent</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Tint</li>
+            <li>6</li>
+        </ul>
+        <p>Parameters</p>
+        <ul>
+            <li>
+                <h2>-color #</h2>
+                <p>(Default FFFFFF) The hex color value (RRGGBB format, no hex specifier) to tint with.</p>
+            </li>
+        </ul>
+        <br/>
+        <br/>
+        <h1 id="Filter7" class="lightcolor">Tint<h1>
+        <p>Sets the max value of a channel by subtracting the complement of the supplied value</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>LevelsSubtract</li>
+            <li>7</li>
+        </ul>
+        <p>Parameters</p>
+        <ul>
+            <li>
+                <h2>-color #</h2>
+                <p>(Default FFFFFF) The hex color value (RRGGBB format, no hex specifier) to adjust with.</p>
+            </li>
+        </ul>
+        <br/>
+        <br/>
+        <h1 id="Filter8" class="lightcolor">Tint<h1>
+        <p>Sets the max value of a channel by multiplying the ratio of the channel and the new values</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>LevelsMultiply</li>
+            <li>8</li>
+        </ul>
+        <p>Parameters</p>
+        <ul>
+            <li>
+                <h2>-color #</h2>
+                <p>(Default FFFFFF) The hex color value (RRGGBB format, no hex specifier) to adjust with.</p>
+            </li>
+        </ul>
+        <br/>
+        <br/>
+        
         <br/>
         <br/>
     </body>
