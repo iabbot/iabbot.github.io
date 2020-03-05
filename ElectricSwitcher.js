@@ -217,5 +217,14 @@ function PopulatePanel() {
         ClearPanel();\
         NewSButton('Accept', 'iab!vye accept', true, 'Sends an invite back to the bot dev. (For troubleshooting, etc.)', ['None.']);\
         NewSButton('Deny', 'iab!vye deny M', true, 'Denies an invite back to the bot dev, with an optional message.', ['M: A message to write to the console.']);");
+	Button("cii!", "\
+        ExpandSubcommandsPanel();\
+        ClearPanel();\
+        SetDescription('cii! is used to manage interactions with the cII Interface (cIII, if you prefer). ALL CII COMMANDS ARE DONE IN DMS WITH THE BOT. THEY WILL NOT BE HANDLED IN GUILD CHATS. THIS IS TO PROTECT YOUR ACCOUNT CREDENTIALS.');\
+        NewSButton('register', 'cii!register -username username -password password -email email', false, 'Creates a new cII user account. Make sure to use a real email; You have to verify it to get the benefits. I wont spam you.', ['-username: your desired username. It must be unique.', '-password: Your desired password.', '-email: The email to use. It must be unique.']);\
+        NewSButton('verify', 'cii!verify -email email, -code c', false, 'Verifies your cII account.', ['-email: the email you signed up with.', '-code: the code you recieved in the email.']);\
+        NewSButton('verified', 'cii!verified -username user', false, 'Checks if your account is verified', ['-username: your username.']);\
+        NewSButton('binddiscord', 'cii!binddiscord -username user -password password', false, 'Binds your Discord user to your cII account, allowing you to interact with cII. Your account must be verified.', ['-username: your username.', '-password: your password.']);");
+    
             
 }
