@@ -139,7 +139,6 @@ function PopulatePanel() {
     NewButton("iab!avatar", true, 'iab!avatar %', false, "Sends a user\'s avatar.", ["%: The user whose avatar should be sent."]);
     NewButton("iab!allow", true, "iab!allow % P (or iab!unprohibit % P if you hate yourself)", true, "Reallows a user to use a command.", ["%: The user to allow. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
     NewButton("iab!bruh", true, 'iab!bruh % R', false, "Issues a bruh certificate to a user.", ["%: The bruh boi", "R: Reason for certification"]);
-    NewButton("iab!cbt", true, 'iab!cbt', false, "CBT.", ["None"]);
     NewButton("iab!codeformatting", true, "iab!codeformatting", false, "Formats code, either minifying or prettifying it.", ["-minify: Minify the code, erasing all extraneous whitespace.","-prettify: Prettify the code, automatically indenting it, writing one statement per line, etc.","-engine <engine>: Defines which engine to use. Valid values: csharp", "-filename X: Will name the result file to this. Do not include the file extension.", "-content X: Used to denote the data to minify/prettify."]);
     FButton  ("iab!convert", "convert.html");
     NewButton("iab!complain", true, "iab!complain M", false, "Writes a message to the console.", ["M: The message to write to the console."]);
@@ -167,15 +166,11 @@ function PopulatePanel() {
         NewSButton('Guild', 'iab!info guild', false, 'Sends general information about the server.', ['None']);\
         NewSButton('General', 'iab!info general [-ic] [-ec]', false, 'Equivalent to iab!info guild, iab!info emote, and iab!info invite. -ec and -ic are passed to their respective commands.', ['None']);\
         NewSButton('User', 'iab!info user %', false, 'Lists information about a user.', ['%: The user to examine.']);");
-    NewButton("iab!invite", true, "iab!invite", false, "Shh! It's a trap for people who don't know that the real invite command is iabinv.", ["None."]);
     FButton  ("iab!knows", "knows.html");
     FButton  ("iab!licenses", "licenses.html");
-    NewButton("iab!nut", true, "iab!nut", false, "Nut.", ["Nut."]);
     NewButton("iab!permissions", true, "iab!permissions %", false, "Sends a flashy image containing a user's permissions. A red name means that the user has Change Nickname.", ["%: The user to examine."]);
-    NewButton("iab!ping", true, "iab!ping", false, "Ping iab. iab does not like it when you ping it, but you still can.", ["None."]);
     NewButton("iab!phone", true, "iab!phone", false, "Starts or stops a connection to another server who's also running iab!phone.", ["None."]);
-    NewButton("iab!planned", true, "iab!planned", false, "See what I am plotting <a href='planned.html'>here.</a>", ["None."]);
-    NewButton("iab!plus", true, "iab!plus", false, "The eventual premium tier of iab. It's currently not implemented (since the Patreon isn't live), but you can still read about it.", ["None."]);
+    NewButton("iab!plus", true, "iab!plus", false, "uwu", ["None."]);
     NewButton("iab!prohibit", true, "iab!prohibit % P", true, "Stops a user from using a certain command.", ["%: The user to deny. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
     NewButton("iab!prohibitions", true, "iab!prohibitions", true, "Returns a text file that details all the prohibitions in a server.", ["None."]);
     NewButton("iab!random", true, "iab!random [Unordered Parameters]", false, "iab will generate a random number", ["-low: The low bound of the random number.", "-high: The high bound of the random number."]);
