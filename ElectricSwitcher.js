@@ -136,7 +136,6 @@ function PopulatePanel() {
     SetSyntax('',false);
     SetParameters(['I wonder if I should use this space for a changelog']);
     SetDescription('JavaScript gang.');
-    NewButton("iab!50", true, 'iab!50', false, "Generates a 0 or 1.", ["None"]);
     NewButton("iab!avatar", true, 'iab!avatar %', false, "Sends a user\'s avatar.", ["%: The user whose avatar should be sent."]);
     NewButton("iab!allow", true, "iab!allow % P (or iab!unprohibit % P if you hate yourself)", true, "Reallows a user to use a command.", ["%: The user to allow. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
     NewButton("iab!bruh", true, 'iab!bruh % R', false, "Issues a bruh certificate to a user.", ["%: The bruh boi", "R: Reason for certification"]);
