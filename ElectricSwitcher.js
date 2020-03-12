@@ -144,11 +144,15 @@ function PopulatePanel() {
     FButton  ("iab!convert", "convert.html");
     NewButton("iab!complain", true, "iab!complain M", false, "Writes a message to the console.", ["M: The message to write to the console."]);
     NewButton("iab!count", true, "iab!count M", false, "Counts the length of a message.", ["M: The message to count."]);
-    NewButton("iab!die", true, "iab!die #", true, "Deletes iab's messages.", ["#: The number of messages to process."]);
-    NewButton("iab!mur", true, "iab!mur % #", true, "Deletes another user's messages.", ["%: The user to target.", "#: The number of messages to process."]);
-    NewButton("iab!sui", true, "iab!sui #", false, "Deletes your own messages.", ["#: The number of messages to process."]);
-    //NewButton("iab!edge", true, "iab!edge {unorderedParameters}", false, "Generates an edgemap. If no options are specified, these values are used: Bias 0, Color FFFFFF, Multiplier 1, Search-Radius 1, Tolerance 30, AlphaMode 1. If no image is specified, iab will search up to 32 messages above the calling message to find an applicable image. Alpha Modes: 0 means that pixels defined as edges have 255 alpha, and other pixels have 0 alpha. 1 uses the image's old alpha value, and 2 uses the contrast of the pixels to determine the alpha.", ["Image: The image to create an edgemap from. Can be linked, attached, or <a href=\\\"Docs/contextual_image_search.html\\\">contextual</a>.", "-bias #: Adds or subtracts from the alpha channel.", "-color hex#: The color of the edgemap.", "-hue: Color the edges with the existing color data", "-multiplier #: Multiply the alpha value by this number (before bias)", "-radius #: Use this radius to search for edges.", "-tolerance #: The amount a channel must differ to be considered an edge.", "-alphamode #: The mode of alpha calculation to use."]);
-    NewButton("iab!edgy", true, "iab!edgy B T F", false, "Attempts to soften a poorly cut png. All parameters are optional (except image lol)", ["B: Lowers the alpha of selected pixels by this amount.", "The amount the alpha channel must differ from the extremes to be selected (so 16 would be alpha values 16 - 239).", "F: The range, in pixels, to feather the alpha values."]);
+    Button   ("iab!del", "\
+        ExpandSubcommandsPanel();\
+        ClearPanel();\
+        NewSButton('self', 'iab!del self #', false, 'Deletes your own messages.', ['#: The number of messages to check.']);\
+        NewSButton('iab', 'iab!del iab #', true, 'Deletes iab messages (requires Manage Messages).', ['#: The number of messages to check.']);\
+        NewSButton('channel', 'iab!del channel # / iab!del c #', true, 'Deletes messages from a channel (requires Manage Messages).', ['#: The number of messages to delete.']);\
+        NewSButton('user', 'iab!del user <user> #', true, 'Deletes messages from a user (requires Manage Messages).', ['#: The number of messages to check.']);");
+    
+	NewButton("iab!edgy", true, "iab!edgy B T F", false, "Attempts to soften a poorly cut png. All parameters are optional (except image lol)", ["B: Lowers the alpha of selected pixels by this amount.", "The amount the alpha channel must differ from the extremes to be selected (so 16 would be alpha values 16 - 239).", "F: The range, in pixels, to feather the alpha values."]);
     FButton("iab!filter", "filter.html");
     NewButton("iab!gencol", true, "iab!gencol R G B (or iab!generatecolor R G B)", false, "Generates a small image of a specified color. I'm not writing the parameters because they're obvious. Fight me.", ["arr gee bee"]);
     NewButton("iab!getannouncements", true, "iab!getannouncements true/false", true, "Updates your guild's preference to recieve announcements", ["true / false"]);
