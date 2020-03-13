@@ -27,48 +27,60 @@
             <p>There are a lot of ways to desaturate a pixel. Not all of them are the 'best' way. For example, the default action for AKAIP to take when you don't specify an option is to take <code> (R + G + B ) / 3 </code> as each channel's new value. Quite frankly, this is a terrible way to do it; it creates a light, washed-out version of the image. As such, I've introduced new options for the command:</p>
             <hr/>
             <div class="wide am tc" style="height:10em">
-                <div class="am tc" style="width:50%;float:left;height:10em">
-                    <h2>0: Old AKAIP method</h2>
+                <div class="am tc" style="width:49%;float:left;height:10em">
+                    <h2 style="margin-block-start:0;margin-block-end:0;">0: Old AKAIP method</h2>
                     <p> This method, described before, takes every channel into consideration:</p>
                     <code>B = (R+G+B) / 3</code>
                 </div>
-                <div class="am tc" style="width:50%;float:left;height:10em;">
+                <div style="width:2%;height:100%;float:left">
+                <div class="am tc" style="width:5%;height:100%;background-color:#777777;"></div>
+                </div>
+                <div class="am tc" style="width:49%;float:right;height:10em;">
                     <img src="color_space_enum/src.png", style="width:50%;height:100%;float:left">
                     <img src="color_space_enum/oldMethod.png", style="width:50%;height:100%;float:left">
                 </div>
             </div>
             <hr/>
             <div class="wide am tc" style="height:10em">
-                <div class="am tc" style="width:50%;float:left;height:10em;">
-                    <h2>1: HSV method</h2>
+                <div class="am tc" style="width:49%;float:left;height:10em;">
+                    <h2 style="margin-block-start:0;margin-block-end:0;">1: HSV method</h2>
                     <p>This method takes into account which channel is the highest in its calculation.</p>
                     <code>B = max(R,G,B)</code>
                 </div>
-                <div class="am tc" style="width:50%;float:left;height:10em;">
+                <div style="width:2%;height:100%;float:left">
+                <div class="am tc" style="width:5%;height:100%;background-color:#777777;"></div>
+                </div>
+                <div class="am tc" style="width:49%;float:right;height:10em;">
                     <img src="color_space_enum/src.png", style="width:50%;height:100%;float:left">
                     <img src="color_space_enum/HSVMethod.png", style="width:50%;height:100%;float:left">
                 </div>
             </div>
             <hr/>
             <div class="wide am tc" style="height:10em">
-                <div class="am tc" style="width:50%;float:left;height:10em;">
-                    <h2>2: HSL method</h2>
+                <div class="am tc" style="width:49%;float:left;height:10em;">
+                    <h2 style="margin-block-start:0;margin-block-end:0;">2: HSL method</h2>
                     <p>This method takes both the lowest and highest channel into account.</p>
                     <code>B = (max(R,G,B) + min(R,G,B)) / 2</code>
                 </div>
-                <div class="am tc" style="width:50%;float:left;height:10em;">
+                <div style="width:2%;height:100%;float:left">
+                <div class="am tc" style="width:5%;height:100%;background-color:#777777;"></div>
+                </div>
+                <div class="am tc" style="width:49%;float:right;height:10em;">
                     <img src="color_space_enum/src.png", style="width:50%;height:100%;float:left">
                     <img src="color_space_enum/HSLMethod.png", style="width:50%;height:100%;float:left">
                 </div>
             </div>
             <hr/>
             <div class="wide am tc" style="height:10em">
-                <div class="am tc" style="width:50%;float:left;height:10em;">
-                    <a href="https://alienryderflex.com/hsp.html"><h2>3: HSP method</h2></a>
+                <div class="am tc" style="width:49%;float:left;height:10em;">
+                    <a  style="margin-block-start:0;margin-block-end:0;"href="https://alienryderflex.com/hsp.html"><h2>3: HSP method</h2></a>
                     <p>This method takes all channels into account by how the human eye sees lightness from each color.</p>
                     <code>B = sqrt(0.299R^2 + 0.587G^2 + 0.114B^2)</code>
                 </div>
-                <div class="am tc" style="width:50%;float:left;height:10em;">
+                <div style="width:2%;height:100%;float:left">
+                <div class="am tc" style="width:5%;height:100%;background-color:#777777;"></div>
+                </div>
+                <div class="am tc" style="width:49%;float:right;height:10em;">
                     <img src="color_space_enum/src.png", style="width:50%;height:100%;float:left">
                     <img src="color_space_enum/HSPMethod.png", style="width:50%;height:100%;float:left">
                 </div>
