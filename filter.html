@@ -280,13 +280,108 @@
         <p>Parameters:</p>
 		<ul>
 			<li>
-				<h2>-channels <channels></h2>
+				<h2>-channels </h2>
 				<p>A combination of 'r', 'g', 'b', and 'a' defining which channels to negate.</p>
 			</li>
 		</ul>
         <br/>
         <br/>
-        
+        <h1 id="Filter14" class="lightcolor">Setchannel</h1>
+        <p>Sets the value of a channel</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Setchannel</li>
+            <li>14</li>
+        </ul>
+        <p>Parameters:</p>
+		<ul>
+			<li>
+				<h2>-(r/g/b/a)  </h2>
+				<p>The value to set for the specified channel</p>
+			</li>
+		</ul>
+        <br/>
+        <br/>
+        <h1 id="Filter15" class="lightcolor">Saturate</h1>
+        <p>Saturates an image</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Saturate</li>
+            <li>15</li>
+        </ul>
+        <p>Parameters:</p>
+		<ul>
+			<li>
+				<h2>-saturation</h2>
+				<p>A value, ranging from 0 to 1, that describes the saturation. 0 is completely desaturated, 1 is completely saturated.</p>
+			</li>
+			<li>
+				<h2>-mode</h2>
+                <p>A value that determines the mode to use:</p>
+                <ol>
+                    <li>
+                        New pixel saturation = pixelSaturation * saturation
+                    </li>
+                    <li>
+                        New pixel saturation = saturation
+                    </li>
+                    <li>
+                        New pixel saturation = pixelSaturation + saturation
+                    </li>
+                </ol>
+			</li>
+		</ul>
+        <br/>
+        <br/>
+        <h1 id="Filter16" class="lightcolor">No Operation</h1>
+        <p>Only used to debug issues with akaip recieving images, not really useful.</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Nothing</li>
+            <li>16</li>
+        </ul>
+        <p>No parameters.</p>
+		<br/>
+        <br/>
+        <h1 id="Filter17" class="lightcolor">Chromakey</h1>
+        <p>Cuts out a certain color from an image</p>
+        <p>Possible IDs:</p>
+        <ul>
+            <li>Chromakey</li>
+            <li>CK</li>
+            <li>17</li>
+        </ul>
+        <p>Parameters:</p>
+		<ul>
+			<li>
+				<h2>-color </h2>
+				<p>A hex color, in RRGGBB format, that describes the color to remove</p>
+			</li>
+			<li>
+				<h2>-tolerance </h2>
+				<p>The amount each pixel can differ from the key color and still be selected.</p>
+			</li>
+			<li>
+				<h2>-alphamode </h2>
+                <p>The mode used to set the alpha:</p>
+                <ol>
+                    <li>
+                        New pixel alpha = Alpha - alphaReduction
+                    </li>
+                    <li>
+                        New pixel alpha = old pixel alpha - (255 / (differenceR + differenceG + differenceB + 1))
+                        <br/>
+                        (typically gives worse results than alphamode 0)
+                    </li>
+                </ol>
+			</li>
+			<li>
+				<h2>-alphareduction </h2>
+				<p>Defines how much to reduce the selected pixels' alpha by. To completely cut out keyed pixels, use 255.</p>
+			</li>
+		</ul>
+        <br/>
+        <br/>
         <br/>
         <br/>
     </body>
