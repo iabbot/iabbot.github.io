@@ -141,7 +141,17 @@ function PopulatePanel() {
     NewButton("iab!allow", true, "iab!allow % P (or iab!unprohibit % P if you hate yourself)", true, "Reallows a user to use a command.", ["%: The user to allow. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
     NewButton("iab!bruh", true, 'iab!bruh % R', false, "Issues a bruh certificate to a user.", ["%: The bruh boi", "R: Reason for certification"]);
     NewButton("iab!bugreport", true, 'iab!bugreport', false, "Sends the bug report link.", ["None."]);
-    NewButton("iab!codeformatting", true, "iab!codeformatting", false, "Formats code, either minifying or prettifying it.", ["-minify: Minify the code, erasing all extraneous whitespace.","-prettify: Prettify the code, automatically indenting it, writing one statement per line, etc.","-engine <engine>: Defines which engine to use. Valid values: csharp", "-filename X: Will name the result file to this. Do not include the file extension.", "-content X: Used to denote the data to minify/prettify."]);
+    NewButton("iab!codeformatting", true, "iab!codeformatting", false, "Formats code, either minifying or prettifying it.", 
+    ["-minify: Minify the code, erasing all extraneous whitespace.",
+    "-prettify: Prettify the code, automatically indenting it, writing one statement per line, etc.",
+    "-engine <engine>: Defines which engine to use. Valid values: csharp", 
+    "-filename X: Will name the result file to this. Do not include the file extension.", 
+    "-content X: Used to denote the data to minify/prettify.",
+    "Spacing options (SO): Define how to remove spaces around them. Valid values are none, before, after, both",
+    "-semicolon or -;: SO",
+    "-parenthesis or -(): SO.",
+    "-brackets or -[]: SO.",
+    "-braces or -{}: SO"]);
     FButton  ("iab!convert", "convert.html");
     NewButton("iab!complain", true, "iab!complain M", false, "Writes a message to the console.", ["M: The message to write to the console."]);
     NewButton("iab!count", true, "iab!count M", false, "Counts the length of a message.", ["M: The message to count."]);
