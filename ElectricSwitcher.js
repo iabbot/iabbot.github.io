@@ -140,6 +140,7 @@ function PopulatePanel() {
     NewButton("iab!avatar", true, 'iab!avatar %', false, "Sends a user\'s avatar.", ["%: The user whose avatar should be sent."]);
     NewButton("iab!allow", true, "iab!allow % P (or iab!unprohibit % P if you hate yourself)", true, "Reallows a user to use a command.", ["%: The user to allow. Use 0 or * to deny everyone.", "P: The permission to deny. This should be the content after the prefix: \'nut\', not \'iab!nut\'"]);
     NewButton("iab!bruh", true, 'iab!bruh % R', false, "Issues a bruh certificate to a user.", ["%: The bruh boi", "R: Reason for certification"]);
+    NewButton("iab!bugreport", true, 'iab!bugreport', false, "Sends the bug report link.", ["None."]);
     NewButton("iab!codeformatting", true, "iab!codeformatting", false, "Formats code, either minifying or prettifying it.", ["-minify: Minify the code, erasing all extraneous whitespace.","-prettify: Prettify the code, automatically indenting it, writing one statement per line, etc.","-engine <engine>: Defines which engine to use. Valid values: csharp", "-filename X: Will name the result file to this. Do not include the file extension.", "-content X: Used to denote the data to minify/prettify."]);
     FButton  ("iab!convert", "convert.html");
     NewButton("iab!complain", true, "iab!complain M", false, "Writes a message to the console.", ["M: The message to write to the console."]);
@@ -208,8 +209,8 @@ function PopulatePanel() {
         NewSButton('Busy', 'iab!spintext busy', false, 'Returns whether or not blender is busy or disabled.', ['None.']);\
         NewSButton('Recall', 'iab!spintext recall #', false, 'Resends a spintext.', ['#: The ID of the spintext (given by create)']);");
     FButton("iab!standardrules", "standardrules.html");
-    NewButton("iab!suggest", true, "iab!suggest S", false, "Writes a suggestion that persists if the bot restarts.", ["S: the suggestion."]);
-    NewButton("iab!todec", true, "iab!todec H#", false, "Parses a hex number to decimal..", ["H#: The number (in hex, no prefix) to convert."]);
+    NewButton("iab!suggest", true, "iab!suggest", false, "Sends the suggestion link.", ["None."]);
+    NewButton("iab!todec", true, "iab!todec H#", false, "Parses a hex number to decimal.", ["H#: The number (in hex, no prefix) to convert."]);
     //Vye
     Button("iab!vye", "\
         ExpandSubcommandsPanel();\
